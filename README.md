@@ -7,6 +7,7 @@ This site is managed by [Hugo](https://gohugo.io/). To setup your dev environmen
 * Install hugo, see https://gohugo.io/getting-started/installing
 * Clone this repository: `git clone https://github.com/covid19-tl/covid19-tl`
 * `cd covid19-tl`
+* Init submodules: `git submodule update --init --recursive`
 * Run the hugo development server: `hugo server -D`
 * You can now access this site at http://localhost:1313/
 * Try changing for example `content/tdt/home/cases.md`,  it will update in your browser
