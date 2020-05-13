@@ -13,7 +13,7 @@ weight = 1  # Order that this section will appear.
 
 +++
 
-# Timor-Leste Ministério da Saúde covid-19 Dashboard
+# Timor-Leste Ministério da Saúde covid-19 Dashboard  
 
 *Dadus aktualiza iha dia 12 Maiu 2020.*
 
