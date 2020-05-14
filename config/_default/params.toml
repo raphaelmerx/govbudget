@@ -1,6 +1,16 @@
 # SITE SETUP
 # Documentation: https://sourcethemes.com/academic/
 
+last_update_en = "13 May 2020"
+last_update_tdt = "13 Maio 2020"
+confirmed_cases = 24
+recovered_cases = 23
+case_data = [
+  # data until May 11 is hard coded in the widget cases.html
+  {day = "May 12, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 22},
+  {day = "May 13, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 23},
+]
+
 ############################
 ## Theme
 ############################
