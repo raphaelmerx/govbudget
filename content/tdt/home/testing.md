@@ -16,10 +16,10 @@ weight = 2  # Order that this section will appear.
 
 ## Teste
 
-#### Husi teste hamutuk 1120:
+#### Husi teste hamutuk 1222:
 * Positivu 24 (kazu konfirmadu)
-* Negativu 822 
-* Hein rezultadu 274 
+* Negativu 855 
+* Hein rezultadu 343 
 
 <script type="text/javascript">
   google.charts.load('current', {'packages':['sankey']});
@@ -31,9 +31,9 @@ weight = 2  # Order that this section will appear.
     data.addColumn('string', 'To');
     data.addColumn('number', '');
     data.addRows([
-      [ 'Teste', 'Negativu', 822 ],
+      [ 'Teste', 'Negativu', 855 ],
       [ 'Teste', 'Positivu', 24 ],
-      [ 'Teste', 'Hein rezultadu', 274 ],
+      [ 'Teste', 'Hein rezultadu', 343 ],
     ]);
 
     var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
