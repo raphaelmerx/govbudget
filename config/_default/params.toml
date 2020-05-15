@@ -12,6 +12,11 @@ case_data = [
   {day = "May 14, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 23},
 ]
 
+tests_total = 1222
+positive_tests = 24
+negative_tests = 855
+pending_tests = 343 
+
 ############################
 ## Theme
 ############################
