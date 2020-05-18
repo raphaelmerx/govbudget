@@ -9,17 +9,22 @@
   weight = 10
 
 [[main]]
-  name = "Compare cases"
-  url = "#compare_cases"
+  name = "Testing"
+  url = "#testing"
   weight = 20
 
 [[main]]
-  name = "Testing"
-  url = "#testing"
+  name = "Compare cases"
+  url = "#compare_cases"
   weight = 30
+
+[[main]]
+  name = "BCC messaging"
+  url = "#bcc_message"
+  weight = 40
 
 [[main]]
   name = "Resources"
   url = "#resources"
-  weight = 40
+  weight = 50
 

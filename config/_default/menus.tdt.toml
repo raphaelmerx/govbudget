@@ -9,17 +9,22 @@
   weight = 10
 
 [[main]]
-  name = "Kompara kazu"
-  url = "#compare_cases"
+  name = "Teste"
+  url = "#testing"
   weight = 20
 
 [[main]]
-  name = "Teste"
-  url = "#testing"
+  name = "Informasaun ba populasaun"
+  url = "#bcc_message"
   weight = 30
+
+[[main]]
+  name = "Kompara kazu"
+  url = "#compare_cases"
+  weight = 40
 
 [[main]]
   name = "Rekursus"
   url = "#resources"
-  weight = 40
+  weight = 50
 
