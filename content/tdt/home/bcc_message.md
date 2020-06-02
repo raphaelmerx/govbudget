@@ -20,7 +20,7 @@ weight = 3  # Order that this section will appear.
 Sidadaun Timor-Leste 1,095,936 ne'ebé hela iha aldeia hamutuk 1,946 simu ona informasaun kona-ba Covid-19 husi Ministério da Saúde.
 
 
-Tabela tuir mai hatudu kobertura informasaun ihs kada Municipiu. 
+Tabela tuir mai hatudu kobertura informasaun iha kada Municipiu. 
 
 | Municipiu | # sukus | # aldeias | # aldeias ne'ebé atinji | kobertura | 
 | --------- | ------- | --------- | ----------------------- | --------- | 
