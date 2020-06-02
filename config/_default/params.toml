@@ -1,8 +1,8 @@
 # SITE SETUP
 # Documentation: https://sourcethemes.com/academic/
 
-last_update_en = "18 May 2020"
-last_update_tdt = "18 Maio 2020"
+last_update_en = "01 June 2020"
+last_update_tdt = "01 Junho 2020"
 confirmed_cases = 24
 recovered_cases = 28
 case_data = [
@@ -14,12 +14,26 @@ case_data = [
   {day = "May 16, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
   {day = "May 17, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
   {day = "May 18, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 19, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 20, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 21, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 22, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 23, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 24, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 25, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 26, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 27, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 28, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 29, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 30, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "May 31, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "June 01, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
 ]
 
-tests_total = 1498
+tests_total = 1581
 positive_tests = 24
-negative_tests = 1117 
-pending_tests = 357 
+negative_tests = 1544 
+pending_tests = 13 
 
 ############################
 ## Theme
