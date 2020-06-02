@@ -34,7 +34,7 @@ case_data = [
 tests_total = 1582
 positive_tests = 24
 negative_tests = 1553 
-pending_tests = 13 
+pending_tests = 5 
 
 ############################
 ## Theme
