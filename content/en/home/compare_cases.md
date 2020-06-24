@@ -43,9 +43,8 @@ weight = 3  # Order that this section will appear.
  css_class = ""
 +++
 
-## How does Timor compare?
+## Confirmed cases per municipality
 
-Timor has less confirmed cases per million than Indonesia or the Philippines
 
 <script type="text/javascript">
   google.charts.load('current', {
@@ -58,34 +57,34 @@ Timor has less confirmed cases per million than Indonesia or the Philippines
 
   function drawRegionsMap() {
     var data = google.visualization.arrayToDataTable([
-        ['Country', 'Confirmed cases per million'],
-        ["Cambodia", 7.297099803570447],
-        ["Indonesia", 33.25489757244768],
-        ["Laos", 2.61148426319583],
-        ["Malaysia", 179.81833898648824],
-        ["Myanmar", 2.6833404294822363],
-        ["Philippines", 70.97027739778265],
-        ["Thailand", 42.09170381113874],
-        ["TL", 18.203303596214322],
-        ["Vietnam", 2.7738229967863823],
+        ['Municipiu', 'Confirmed cases'],
+        ['Aileu', 0],
+        ['Ainaro', 0],
+        ['Baucau', 0],
+        ['Bobonaro', 0],
+        ['Cova', 0],
+        ['Dili', 22],
+        ['Ermera', 0],
+        ['Lautem', 0],
+        ['Liquiça', 2],
+        ['Manatuto', 0],
+        ['Manufahi', 0],
+        ['Oecussi', 0],
+        ['Viqueque', 0],
     ]);
 
     var options = {
-        region: '035',
+        region: 'TL',
+        displayMode: 'regions',
+        resolution: 'provinces',
         chartArea: {width: '95%', height: '80%', top: 5},
         colorAxis: {colors: ['red']}
     };
 
-    var chart = new google.visualization.GeoChart(document.getElementById('compare-map'));
+    var chart = new google.visualization.GeoChart(document.getElementById('municipality-map'));
 
     chart.draw(data, options);
   }
 </script>
 
-<div id="compare-map"></div>
-
-<style>
-#compare-map {
-    max-width: 800px;
-}
-</style>
+<div id="municipality-map"></div>
