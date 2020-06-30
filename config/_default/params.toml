@@ -1,8 +1,8 @@
 # SITE SETUP
 # Documentation: https://sourcethemes.com/academic/
 
-last_update_en = "29 June 2020"
-last_update_tdt = "29 Junho 2020"
+last_update_en = "30 June 2020"
+last_update_tdt = "30 Junho 2020"
 confirmed_cases = 24
 recovered_cases = 28
 case_data = [
@@ -56,12 +56,13 @@ case_data = [
   {day = "June 27, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
   {day = "June 28, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
   {day = "June 29, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "June 30, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
 ]
 
 tests_total = 2427 
 positive_tests = 24
-negative_tests = 2354 
-pending_tests = 49 
+negative_tests = 2397 
+pending_tests = 24 
 
 ############################
 ## Theme
