@@ -67,10 +67,10 @@ case_data = [
   {day = "Jullu 08, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
 ]
 
-tests_total = 3122 
+tests_total = 2986 
 positive_tests = 24
-negative_tests = 2848
-pending_tests = 250 
+negative_tests = 2729
+pending_tests = 233 
 
 ############################
 ## Theme
