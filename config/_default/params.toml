@@ -71,6 +71,7 @@ case_data = [
   {day = "Jullu 12, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
   {day = "Jullu 13, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
   {day = "Jullu 14, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
+  {day = "Jullu 15, 2020", confirmed_cases = 24, new_cases = 0, recovered_cases = 28},
 ]
 
 tests_total = 3493 
