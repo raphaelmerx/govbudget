@@ -7,13 +7,14 @@
   languageCode = "en-us"
   contentDir = "content/en"
 
-[tdt]
-  languageCode = "tdt"
-  contentDir = "content/tdt"
+[fr]
+  languageCode = "fr"
+  contentDir = "content/fr"
+
 #  title = "Timor-Leste Covid-19 Dashboard"
-#  [tdt.params]
-#    description = "Site description in Chinese..."
-#  [[tdt.menu.main]]
-#    name = "Wo"
+#  [fr.params]
+#    description = "Site description in Tetun..."
+#  [[fr.menu.main]]
+#    name = "Tdt"
 #    url = "#about"
 #    weight = 1

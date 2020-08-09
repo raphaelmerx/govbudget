@@ -1,0 +1,144 @@
+<div class="row">
+    <div class="col-lg-12">
+
+        <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard"> Visualisation des finances publiques en France</h1>
+        <p><em>Pour l'année 2019</em></p>
+        <h2 id="kazu-konfirmadu-total-no-foun-iha-timor-leste">Allocation par secteur</h2>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+
+            google.charts.load('current', {'packages':['treemap']});
+
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'ID');
+                data.addColumn('string', 'Parent');
+                data.addColumn('number', 'Number Of Lines');
+                data.addRows([
+                    ['Finances publiques', null, 0],
+['General public services', 'Finances publiques', null],
+['Executive and legislative organs, financial, fiscal and external affairs', 'General public services', 43477.0],
+['Foreign economic aid', 'General public services', 3462.0],
+['General services', 'General public services', 46044.0],
+['Basic research', 'General public services', 6921.0],
+['RandD General public services', 'General public services', 1.0],
+['General public services n.e.c.', 'General public services', 1884.0],
+['Public debt transactions', 'General public services', 43675.0],
+['Transfers of a general character between different levels of government', 'General public services', 2.0],
+
+['Defence', 'Finances publiques', null],
+['Military defence', 'Defence', 34865.0],
+['Civil defence', 'Defence', 200.0],
+['Foreign military aid', 'Defence', 1976.0],
+['RandD Defence', 'Defence', 1253.0],
+['Defence n.e.c.', 'Defence', 3092.0],
+
+['Public order and safety', 'Finances publiques', null],
+['Police services', 'Public order and safety', 22189.0],
+['Fire-protection services', 'Public order and safety', 6807.0],
+['Law courts', 'Public order and safety', 5542.0],
+['Prisons', 'Public order and safety', 3583.0],
+['RandD Public order and safety', 'Public order and safety', 15.0],
+['Public order and safety n.e.c.', 'Public order and safety', 985.0],
+
+['Economic affairs', 'Finances publiques', null],
+['General economic, commercial and labour affairs', 'Economic affairs', 39069.0],
+['Agriculture, forestry, fishing and hunting', 'Economic affairs', 4215.0],
+['Fuel and energy', 'Economic affairs', 10952.0],
+['Mining, manufacturing and construction', 'Economic affairs', 690.0],
+['Transport', 'Economic affairs', 48629.0],
+['Communication', 'Economic affairs', 498.0],
+['Other industries', 'Economic affairs', 10488.0],
+['RandD Economic affairs', 'Economic affairs', 19108.0],
+['Economic affairs n.e.c.', 'Economic affairs', 1723.0],
+
+['Environment protection', 'Finances publiques', null],
+['Waste management', 'Environment protection', 12872.0],
+['Waste water management', 'Environment protection', 4921.0],
+['Pollution abatement', 'Environment protection', 1874.0],
+['Protection of biodiversity and landscape', 'Environment protection', 1915.0],
+['RandD Environmental protection', 'Environment protection', 869.0],
+['Environmental protection n.e.c.', 'Environment protection', 1599.0],
+
+['Housing and community amenities', 'Finances publiques', null],
+['Housing development', 'Housing and community amenities', 6693.0],
+['Community development', 'Housing and community amenities', 15028.0],
+['Water supply', 'Housing and community amenities', 3043.0],
+['Street lighting', 'Housing and community amenities', 1612.0],
+['RandD Housing and community amenities', 'Housing and community amenities', 0.0],
+['Housing and community amenities n.e.c.', 'Housing and community amenities', 266.0],
+
+['Health', 'Finances publiques', null],
+['Medical products, appliances and equipment', 'Health', 31341.0],
+['Outpatient services', 'Health', 71500.0],
+['Hospital services', 'Health', 80518.0],
+['Public health services', 'Health', 2694.0],
+['RandD Health', 'Health', 2200.0],
+['Health n.e.c.', 'Health', 2946.0],
+
+['Recreation, culture and religion', 'Finances publiques', null],
+['Recreational and sporting services', 'Recreation, culture and religion', 13704.0],
+['Cultural services', 'Recreation, culture and religion', 14832.0],
+['Broadcasting and publishing services', 'Recreation, culture and religion', 3531.0],
+['Religious and other community services', 'Recreation, culture and religion', 497.0],
+['RandD Recreation, culture and religion', 'Recreation, culture and religion', 0.0],
+['Recreation, culture and religion n.e.c.', 'Recreation, culture and religion', 66.0],
+
+['Education', 'Finances publiques', null],
+['Pre-primary and primary education', 'Education', 34155.0],
+['Secondary education', 'Education', 47906.0],
+['Post-secondary non-tertiary education', 'Education', 834.0],
+['Tertiary education', 'Education', 15027.0],
+['Education not definable by level', 'Education', 5547.0],
+['Subsidiary services to education', 'Education', 16462.0],
+['RandD Education', 'Education', 6.0],
+['Education n.e.c.', 'Education', 614.0],
+
+['Social protection', 'Finances publiques', null],
+['Sickness and disability', 'Social protection', 67954.0],
+['Survivors', 'Social protection', 35078.0],
+['Family and children', 'Social protection', 51548.0],
+['Unemployment', 'Social protection', 44346.0],
+['Housing', 'Social protection', 20403.0],
+['Social exclusion n.e.c.', 'Social protection', 26173.0],
+['RandD Social protection', 'Social protection', 0.0],
+['Social protection n.e.c.', 'Social protection', 4571.0],
+['Old age', 'Social protection', 312126.0],
+                ]);
+
+                var tree = new google.visualization.TreeMap(document.getElementById('tree-chart'));
+
+                var options = {
+                    highlightOnMouseOver: true,
+                    maxDepth: 1,
+                    maxPostDepth: 0,
+                    minHighlightColor: '#8c6bb1',
+                    midHighlightColor: '#9ebcda',
+                    maxHighlightColor: '#edf8fb',
+                    minColor: '#009688',
+                    midColor: '#f7f7f7',
+                    maxColor: '#ee8100',
+                    headerHeight: 15,
+                    height: 500,
+                    useWeightedAverageForAggregation: true,
+                    generateTooltip: generateTooltip,
+                    hintOpacity: 0.5,
+                };
+
+                function generateTooltip(row, size, value) {
+                    // var percent = (value * 100).toFixed(2) + '%';
+                    var value = data.getValue(row, 2);
+                    var innerText = value ? data.getValue(row, 0) + ': ' + value : data.getValue(row, 0);
+                    return '<div style="background:white; padding:10px; border-style:solid">' + innerText + '</div>';
+                }
+
+                tree.draw(data, options);
+            }
+        </script>
+        <div class="chart" id="tree-chart"></div>
+
+    </div>
+</div>
