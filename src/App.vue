@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <CountrySelector />
+    <GraphDisplay />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CountrySelector from './components/CountrySelector.vue'
+import GraphDisplay from './components/GraphDisplay.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CountrySelector,
+    GraphDisplay
   }
 }
 </script>
