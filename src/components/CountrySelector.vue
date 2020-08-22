@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     handleCountryChange: function(event) {
-      this.$root.$emit('load-country', event.target.value)
+      this.$root.$emit('change-country', event.target.value)
     },
   }
 }
@@ -35,18 +35,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+select {
+  font-size: 0.8em;
 }
 </style>

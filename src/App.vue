@@ -1,19 +1,38 @@
 <template>
   <div id="app">
-    <CountrySelector />
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
+        View public finances for
+        <CountrySelector />
+      </h1>
+      <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
+        In
+        <TypeSelector />
+      </h1>
+      <p>
+        <em>For year 2018</em>
+      </p>
+    </div>
     <GraphDisplay />
+      <p>
+        <em>Source: <a href="https://stats.oecd.org" target="_blank"> stats.oecd.org</a></em>
+      </p>
+  </div>
   </div>
 </template>
 
 <script>
 import CountrySelector from './components/CountrySelector.vue'
 import GraphDisplay from './components/GraphDisplay.vue'
+import TypeSelector from './components/TypeSelector.vue'
 
 export default {
   name: 'App',
   components: {
     CountrySelector,
-    GraphDisplay
+    GraphDisplay,
+    TypeSelector,
   }
 }
 </script>
@@ -26,5 +45,19 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
 }
 </style>
