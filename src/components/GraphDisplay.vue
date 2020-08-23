@@ -80,6 +80,18 @@ export default {
             category.value = (category.value / this.GDPs[country]) * 100;
           });
         });
+      } else if (type === "percentTotalSpend") {
+        let totalSpend = 0;
+        graphData.children.forEach(headCategory => {
+          headCategory.children.forEach(category => {
+            totalSpend += category.value;
+          });
+        });
+        graphData.children.forEach(headCategory => {
+          headCategory.children.forEach(category => {
+            category.value = (category.value / totalSpend) * 100;
+          });
+        });
       }
       return graphData;
     },
