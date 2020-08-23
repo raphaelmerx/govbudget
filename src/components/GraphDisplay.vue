@@ -140,6 +140,13 @@ export default {
           .attr("viewBox", [0.5, -30.5, width, height + 30])
           .style("font", "10px sans-serif");
 
+        // color scale
+        let color = d3.scaleOrdinal(d3.schemeCategory10);
+
+        let opacity = d3.scaleLinear()
+          .domain([1000000000, 200000000000])
+          .range([0.5, 1]);
+
         let group = svg.append("g").call(render, treemap(graphData));
 
         function render(group, root) {
@@ -164,9 +171,15 @@ export default {
                   .toString(16)
                   .slice(2)).id
             )
-            .attr("fill", d =>
-              d === root ? "#fff" : d.children ? "#ccc" : "#ddd"
-            )
+            .attr("fill", d => {
+              if (d === root) return "#fff";
+              if (d.children) { return color(d.data.name); }
+              return color(d.parent.data.name);
+            })
+            .attr("opacity", function(d) {
+              if (d.children) return 0.8;
+              return opacity(d.data.value)
+            })
             .attr("stroke", "#fff");
 
           node
