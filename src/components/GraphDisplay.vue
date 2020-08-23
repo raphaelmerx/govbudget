@@ -6,6 +6,15 @@
 import axios from "axios";
 import * as d3 from "d3";
 
+function formatCurrency() {
+  let function_ret = d3.format.apply(d3, arguments);
+  return (function(args) {
+    return function() {
+      return args.apply(d3, arguments).replace(/G/, "B");
+    };
+  })(function_ret);
+}
+
 export default {
   name: "GraphDisplay",
   props: {},
@@ -32,7 +41,7 @@ export default {
         Lithuania: 45264.3769
       },
       country: "France",
-      type: "euros"
+      type: "nominal"
     };
   },
   mounted() {
@@ -60,7 +69,11 @@ export default {
       // clone object
       const graphData = JSON.parse(JSON.stringify(this.govspend[country]));
       if (type === "nominal") {
-        return graphData;
+        graphData.children.forEach(headCategory => {
+          headCategory.children.forEach(category => {
+            category.value = category.value * 1000000;
+          });
+        });
       } else if (type === "percentGDP") {
         graphData.children.forEach(headCategory => {
           headCategory.children.forEach(category => {
@@ -76,7 +89,7 @@ export default {
 
       document.getElementById("tree-chart").innerHTML = "";
 
-      let format = d3.format(",d");
+      let format = formatCurrency("0.2s");
       let height = 500;
       let width = 954;
       let getName = function(d) {
@@ -180,12 +193,12 @@ export default {
               i === nodes.length - 1 ? "normal" : null
             )
             .text(d => {
-              let raw = d.replace(/,/g, '');
-              if (isNaN(Number(raw))) {
+              let raw = d.replace(/,/g, "");
+              if (isNaN(Number(raw.substr(0, 1)))) {
                 // label e.g. 'Social protection'
                 return d;
-              } else if (vm.type === 'euros') {
-                return `${d} M€`;
+              } else if (vm.type === "nominal") {
+                return `${d}€`;
               } else {
                 return `${d} %`;
               }
