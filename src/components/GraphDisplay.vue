@@ -112,6 +112,43 @@ export default {
           .join("/");
       };
 
+      var Tooltip = d3
+        .select("#tree-chart")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px");
+
+      // Three function that change the tooltip when user hover / move / leave a cell
+      var mouseover = function() {
+        Tooltip.style("opacity", 1);
+        d3.select(this)
+          .style("stroke", "black")
+          .style("opacity", 1);
+      };
+      var mousemove = function(d) {
+        let windowWidth = window.innerWidth,
+          xPosition =
+            windowWidth - d3.event.pageX < 300
+              ? d3.event.pageX - 300
+              : d3.event.pageX + 5,
+          yPosition = d3.event.pageY + 5;
+        console.log(d);
+        Tooltip.html(d.data.name + ': ' + format(d.value))
+          .style("left", xPosition + "px")
+          .style("top", yPosition + "px");
+      };
+      var mouseleave = function() {
+        Tooltip.style("opacity", 0);
+        d3.select(this)
+          .style("stroke", "none")
+          .style("opacity", 0.8);
+      };
+
       function tile(node, x0, y0, x1, y1) {
         d3.treemapBinary(node, 0, 0, width, height);
         for (const child of node.children) {
@@ -143,7 +180,8 @@ export default {
         // color scale
         let color = d3.scaleOrdinal(d3.schemeCategory10);
 
-        let opacity = d3.scaleLinear()
+        let opacity = d3
+          .scaleLinear()
           .domain([1000000000, 200000000000])
           .range([0.5, 1]);
 
@@ -173,14 +211,19 @@ export default {
             )
             .attr("fill", d => {
               if (d === root) return "#fff";
-              if (d.children) { return color(d.data.name); }
+              if (d.children) {
+                return color(d.data.name);
+              }
               return color(d.parent.data.name);
             })
             .attr("opacity", function(d) {
               if (d.children) return 0.8;
-              return opacity(d.data.value)
+              return opacity(d.data.value);
             })
-            .attr("stroke", "#fff");
+            .attr("stroke", "#fff")
+            .on("mouseover", mouseover)
+            .on("mousemove", mousemove)
+            .on("mouseleave", mouseleave);
 
           node
             .append("clipPath")
@@ -299,3 +342,6 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+</style>
