@@ -156,7 +156,6 @@ export default {
               ? d3.event.pageX - 300
               : d3.event.pageX + 5,
           yPosition = d3.event.pageY + 5;
-        console.log(d);
         Tooltip.html(d.data.name + ": " + format(d.value))
           .style("left", xPosition + "px")
           .style("top", yPosition + "px");
@@ -385,11 +384,21 @@ export default {
         return label;
     },
 
+    getValueText: function(value) {
+      if (this.type === "nominal") {
+        return formatCurrency("0.2s")(value);
+      } else {
+        return `${(Math.round(value * 10) / 10)}%`;
+      }
+    },
+
     buildVirtualCell(data, scale) {
         const height = data.y1 - data.y0;
         const width = data.x1 - data.x0;
 
         let value = data.value;
+
+        const valueText = this.getValueText(value);
 
         // the available width is 40px less than the box width to account for 20px of padding on
         // each side
@@ -410,6 +419,11 @@ export default {
                 x: (width / 2),
                 y: (height / 2) - 5 // shift it up slightly so the full title + subtitle combo is vertically centered
             },
+            subtitle: {
+                text: valueText,
+                x: (width / 2),
+                y: (height / 2) + 15 // to place the subtitle below the title
+            }
         };
 
         return cell;
@@ -423,7 +437,7 @@ export default {
       const availableWidth = document.querySelector('#graph-container').offsetWidth;
 
       const tree = treemap()
-          .size([availableWidth, 500])
+          .size([availableWidth, 400])
           .tile(treemapBinary)
           .paddingInner(5)
           .round(true);
