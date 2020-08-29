@@ -1,40 +1,46 @@
 <template>
   <div id="app">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
-        View public finances for
-        <CountrySelector />
-      </h1>
-      <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
-        In
-        <TypeSelector />
-      </h1>
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
+          View public finances for
+          <CountrySelector />
+        </h1>
+        <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
+          In
+          <TypeSelector />
+        </h1>
+        <p>
+          <em>For year 2018</em>
+        </p>
+        <p>
+          <em>TODO: add % of total gov spending</em>
+        </p>
+      </div>
+      <GraphDisplay />
       <p>
-        <em>For year 2018</em>
+        <em>
+          Source:
+          <a href="https://stats.oecd.org" target="_blank">stats.oecd.org</a>
+        </em>
       </p>
     </div>
-    <GraphDisplay />
-      <p>
-        <em>Source: <a href="https://stats.oecd.org" target="_blank"> stats.oecd.org</a></em>
-      </p>
-  </div>
   </div>
 </template>
 
 <script>
-import CountrySelector from './components/CountrySelector.vue'
-import GraphDisplay from './components/GraphDisplay.vue'
-import TypeSelector from './components/TypeSelector.vue'
+import CountrySelector from "./components/CountrySelector.vue";
+import GraphDisplay from "./components/GraphDisplay.vue";
+import TypeSelector from "./components/TypeSelector.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     CountrySelector,
     GraphDisplay,
-    TypeSelector,
+    TypeSelector
   }
-}
+};
 </script>
 
 <style>
@@ -67,26 +73,25 @@ a {
 */
 
 .tooltip {
-    position: absolute;
-    z-index: 1070;
-    display: block;
-    margin: 0;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: left;
-    text-align: start;
-    text-decoration: none;
-    text-shadow: none;
-    text-transform: none;
-    letter-spacing: normal;
-    word-break: normal;
-    word-spacing: normal;
-    white-space: normal;
-    line-break: auto;
-    font-size: .875rem;
-    word-wrap: break-word;
-    opacity: 0;
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  font-size: 0.875rem;
+  word-wrap: break-word;
+  opacity: 0;
 }
-
 </style>

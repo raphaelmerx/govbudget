@@ -1,13 +1,26 @@
 <template>
-  <div class="chart" id="tree-chart"></div>
+<div id="graph-container">
+    <svg class="treemap" width="100%" height="400">
+      <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
+    </svg>
+</div>
 </template>
 
 <script>
+/* eslint-disable no-unreachable */
 import axios from "axios";
-import * as d3 from "d3";
+import * as d3 from 'd3';
+import { hierarchy, treemap, treemapBinary } from 'd3-hierarchy';
+import { scaleLinear, scaleOrdinal } from 'd3-scale';
+import { interpolate } from 'd3-interpolate';
+import { format } from 'd3-format';
+import { measureText } from '../helpers/measureText';
+
+import TreeCell from './TreeCell.vue'
+
 
 function formatCurrency() {
-  let function_ret = d3.format.apply(d3, arguments);
+  let function_ret = format.apply(d3, arguments);
   return (function(args) {
     return function() {
       return args.apply(d3, arguments).replace(/G/, "B");
@@ -17,6 +30,9 @@ function formatCurrency() {
 
 export default {
   name: "GraphDisplay",
+  components: {
+    TreeCell,
+  },
   props: {},
   data() {
     return {
@@ -41,7 +57,8 @@ export default {
         Lithuania: 45264.3769
       },
       country: "France",
-      type: "nominal"
+      type: "nominal",
+      cells: []
     };
   },
   mounted() {
@@ -98,6 +115,8 @@ export default {
     renderGraph() {
       const vm = this;
       var graphData = this.getFormattedGraphData(this.country, this.type);
+      this.buildVirtualChart(graphData);
+      return;
 
       document.getElementById("tree-chart").innerHTML = "";
 
@@ -138,7 +157,7 @@ export default {
               : d3.event.pageX + 5,
           yPosition = d3.event.pageY + 5;
         console.log(d);
-        Tooltip.html(d.data.name + ': ' + format(d.value))
+        Tooltip.html(d.data.name + ": " + format(d.value))
           .style("left", xPosition + "px")
           .style("top", yPosition + "px");
       };
@@ -160,16 +179,15 @@ export default {
       }
 
       const treemap = data =>
-        d3.treemap().tile(tile)(
-          d3
-            .hierarchy(data)
+        treemap().tile(tile)(
+          hierarchy(data)
             .sum(d => d.value)
             .sort((a, b) => b.value - a.value)
         );
 
       let chart = () => {
-        const x = d3.scaleLinear().rangeRound([0, width]);
-        const y = d3.scaleLinear().rangeRound([0, height]);
+        const x = scaleLinear().rangeRound([0, width]);
+        const y = scaleLinear().rangeRound([0, height]);
 
         const svg = d3
           .select("#tree-chart")
@@ -178,7 +196,7 @@ export default {
           .style("font", "10px sans-serif");
 
         // color scale
-        let color = d3.scaleOrdinal(d3.schemeCategory10);
+        let color = scaleOrdinal(d3.schemeCategory10);
 
         let opacity = d3
           .scaleLinear()
@@ -308,7 +326,7 @@ export default {
             .call(t =>
               group1
                 .transition(t)
-                .attrTween("opacity", () => d3.interpolate(0, 1))
+                .attrTween("opacity", () => interpolate(0, 1))
                 .call(position, d)
             );
         }
@@ -328,7 +346,7 @@ export default {
               group0
                 .transition(t)
                 .remove()
-                .attrTween("opacity", () => d3.interpolate(1, 0))
+                .attrTween("opacity", () => interpolate(1, 0))
                 .call(position, d)
             )
             .call(t => group1.transition(t).call(position, d.parent));
@@ -338,6 +356,100 @@ export default {
       };
 
       chart();
+    },
+
+    truncateText(text, maxWidth) {
+        // calculate the text width of the full label
+        let label = text;
+        let labelWidth = measureText('16px Source Sans Pro, sans serif', text);
+
+        // check to see if the full label will fit
+        if (labelWidth > maxWidth) {
+            // label won't fit, let's cut it down
+            // determine the average character pixel width
+            const characterWidth = Math.ceil(labelWidth / text.length);
+            // give an additional 30px for the ellipsis
+            const availableWidth = maxWidth - 30;
+            let availableLength = Math.floor(availableWidth / characterWidth);
+            if (availableLength < 1) {
+                // we must show at least one character
+                availableLength = 1;
+            }
+
+            // substring the label to this length
+            if (availableLength < text.length) {
+                label = `${label.substring(0, availableLength)}...`;
+            }
+        }
+
+        return label;
+    },
+
+    buildVirtualCell(data, scale) {
+        const height = data.y1 - data.y0;
+        const width = data.x1 - data.x0;
+
+        let value = data.value;
+
+        // the available width is 40px less than the box width to account for 20px of padding on
+        // each side
+        const usableWidth = width - 40;
+        let name = data.data.name;
+        const title = this.truncateText(name, usableWidth);
+        let color = scale(value);
+
+        const cell = {
+            width,
+            height,
+            x: data.x0,
+            y: data.y0,
+            data: data.data,
+            color,
+            title: {
+                text: title,
+                x: (width / 2),
+                y: (height / 2) - 5 // shift it up slightly so the full title + subtitle combo is vertically centered
+            },
+        };
+
+        return cell;
+    },
+
+    buildVirtualChart: function(graphData) {
+      const treemapData = hierarchy(graphData)
+            .sum(d => d.value)
+            .sort((a, b) => b.value - a.value)
+
+      const availableWidth = document.querySelector('#graph-container').offsetWidth;
+
+      const tree = treemap()
+          .size([availableWidth, 500])
+          .tile(treemapBinary)
+          .paddingInner(5)
+          .round(true);
+
+      const rootTreeNode = tree(treemapData);
+      const treeItems = rootTreeNode.children;
+
+      const maxValue = treeItems[0].value;
+      const minValue = treeItems[treeItems.length - 1].value;
+
+      let scale = scaleLinear()
+          .domain([minValue, maxValue])
+          .range(['#47BAD9', '#1C4956']);
+      if (treeItems.length === 1) {
+          // in the event that we only have one data item, mock the scale function to only
+          // return one color
+          scale = () => '#47BAD9';
+      }
+
+      const cells = [];
+      treeItems.forEach((item) => {
+          const cell = this.buildVirtualCell(item, scale);
+          cells.push(cell);
+      });
+
+      this.cells = cells;
     }
   }
 };
