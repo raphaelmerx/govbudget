@@ -13,14 +13,16 @@ import * as d3 from 'd3';
 import { hierarchy, treemap, treemapBinary } from 'd3-hierarchy';
 import { scaleLinear, scaleOrdinal } from 'd3-scale';
 import { interpolate } from 'd3-interpolate';
-import { format } from 'd3-format';
+import { formatLocale } from 'd3-format';
 import { measureText } from '../helpers/measureText';
 
 import TreeCell from './TreeCell.vue'
 
 
+const customD3Locale = formatLocale({ currency: ["€", ""]})
+
 function formatCurrency() {
-  let function_ret = format.apply(d3, arguments);
+  let function_ret = customD3Locale.format.apply(d3, arguments);
   return (function(args) {
     return function() {
       return args.apply(d3, arguments).replace(/G/, "B");
@@ -386,7 +388,7 @@ export default {
 
     getValueText: function(value) {
       if (this.type === "nominal") {
-        return formatCurrency("0.2s")(value);
+        return formatCurrency("$0.2s")(value);
       } else {
         return `${(Math.round(value * 10) / 10)}%`;
       }
@@ -419,6 +421,7 @@ export default {
                 x: (width / 2),
                 y: (height / 2) - 5 // shift it up slightly so the full title + subtitle combo is vertically centered
             },
+            fullTitle: name,
             subtitle: {
                 text: valueText,
                 x: (width / 2),
