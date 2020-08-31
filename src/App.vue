@@ -2,19 +2,14 @@
   <div id="app">
     <div class="row">
       <div class="col-lg-12">
-        <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
+        <h1>
           View public finances for
           <CountrySelector />
-        </h1>
-        <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
           In
           <TypeSelector />
         </h1>
         <p>
           <em>For year 2018</em>
-        </p>
-        <p>
-          <em>TODO: add % of total gov spending</em>
         </p>
       </div>
       <GraphDisplay />
@@ -32,6 +27,8 @@
 import CountrySelector from "./components/CountrySelector.vue";
 import GraphDisplay from "./components/GraphDisplay.vue";
 import TypeSelector from "./components/TypeSelector.vue";
+
+import './assets/styles/index.css';
 
 export default {
   name: "App",

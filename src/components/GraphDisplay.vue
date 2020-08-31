@@ -1,8 +1,15 @@
 <template>
-<div id="graph-container">
-    <svg class="treemap" width="100%" height="400">
+<div id="main-container">
+  <div id="sidebar-container">
+    <SidebarItem :label="this.country + ' GDP'" :value="this.formattedGDP" :has-next="true" />
+    <SidebarItem :label="'Public spending'" :value="this.formattedTotalSpend" :has-next="this.zoom" />
+    <SidebarItem v-if="this.zoom" :label="this.zoom" :value="this.formattedCategorySpend" :has-next="false" />
+  </div>
+  <div id="graph-container">
+    <svg class="treemap" width="100%" height="500">
       <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
     </svg>
+  </div>
 </div>
 </template>
 
@@ -16,6 +23,7 @@ import { formatLocale } from 'd3-format';
 import { measureText } from '../helpers/measureText';
 
 import TreeCell from './TreeCell.vue'
+import SidebarItem from './SidebarItem.vue'
 
 
 const customD3Locale = formatLocale({ currency: ["€", ""]})
@@ -33,6 +41,7 @@ export default {
   name: "GraphDisplay",
   components: {
     TreeCell,
+    SidebarItem,
   },
   props: {},
   data() {
@@ -61,6 +70,8 @@ export default {
 "United States": 327167434,},
       country: "France",
       type: "nominal",
+      totalSpend: 0,
+      categorySpend: 0,
       zoom: '',
       cells: [],
     };
@@ -89,6 +100,17 @@ export default {
       this.renderGraph();
     });
   },
+  computed: {
+    formattedGDP: function () {
+      return formatCurrency("$0.2s")(this.GDPs[this.country] * 1000000);
+    },
+    formattedTotalSpend: function () {
+      return formatCurrency("$0.2s")(this.totalSpend * 1000000);
+    },
+    formattedCategorySpend: function () {
+      return formatCurrency("$0.2s")(this.categorySpend * 1000000);
+    }
+  },
   methods: {
     getData: function() {
       var vm = this;
@@ -96,9 +118,30 @@ export default {
         .get(`${vm.publicPath}govspend.json`)
         .then(response => response.data);
     },
+    getTotalSpend: function(graphData) {
+        let totalSpend = 0;
+        graphData.children.forEach(headCategory => {
+          headCategory.children.forEach(category => {
+            totalSpend += category.value;
+          });
+        });
+        return totalSpend;
+    },
+    getCategorySpend: function(graphData, category) {
+        const categoryTree = graphData.children.find((c) => c.name === category);
+        let totalSpend = 0;
+        categoryTree.children.forEach(child => { totalSpend += child.value; });
+        return totalSpend;
+    },
     getFormattedGraphData: function(country, type) {
       // clone object
       let graphData = JSON.parse(JSON.stringify(this.govspend[country]));
+
+      this.totalSpend = this.getTotalSpend(graphData);
+      if (this.zoom) {
+        this.categorySpend = this.getCategorySpend(graphData, this.zoom);
+      }
+
       if (type === "nominal") {
         graphData.children.forEach(headCategory => {
           headCategory.children.forEach(category => {
@@ -118,15 +161,9 @@ export default {
           });
         });
       } else if (type === "percentTotalSpend") {
-        let totalSpend = 0;
         graphData.children.forEach(headCategory => {
           headCategory.children.forEach(category => {
-            totalSpend += category.value;
-          });
-        });
-        graphData.children.forEach(headCategory => {
-          headCategory.children.forEach(category => {
-            category.value = (category.value / totalSpend) * 100;
+            category.value = (category.value / this.totalSpend) * 100;
           });
         });
       }
@@ -221,7 +258,7 @@ export default {
       const availableWidth = document.querySelector('#graph-container').offsetWidth;
 
       const tree = treemap()
-          .size([availableWidth, 400])
+          .size([availableWidth, 500])
           .tile(treemapBinary)
           .paddingInner(5)
           .round(true);
@@ -254,4 +291,27 @@ export default {
 </script>
 
 <style scoped>
+#main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 480px) {
+  #sidebar-container {
+    display: none;
+  }
+}
+
+#sidebar-container {
+  min-width: 250px;
+  flex-grow: 1;
+  background-color: rgb(50, 58, 69);
+  color: white;
+  margin-right: 2rem;
+  padding-top: 2rem;
+}
+
+#graph-container {
+  flex-grow: 9;
+}
 </style>

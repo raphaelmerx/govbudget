@@ -1,0 +1,32 @@
+.main-dot {
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: #0071bc;
+    border: 4px solid #d8d8d8;
+    z-index: 2;
+    margin-bottom: .5rem;
+}
+
+.small-dot {
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: .6rem;
+    height: .6rem;
+    border-radius: .3rem;
+    background-color: #c2c2c2;
+    z-index: 1;
+    margin-top: .5rem;
+}
