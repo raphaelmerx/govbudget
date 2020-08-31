@@ -58,6 +58,8 @@ export default {
         Latvia: 29056.05,
         Lithuania: 45264.3769
       },
+      population: {"Australia": 24992860, "Austria": 8837707, "Belgium": 11403740, "Canada": 37058856, "Chile": 18751405, "Colombia": 49834240, "Czech Republic": 10626430, "Denmark": 5789957, "Estonia": 1321977, "Finland": 5515525, "France": 66941698, "Germany": 82914191, "Greece": 10725886, "Hungary": 9767600, "Iceland": 352722, "Ireland": 4857015, "Israel": 8872943, "Italy": 60421797, "Japan": 126443180, "Korea": 51635256, "Latvia": 1927170, "Lithuania": 2801541, "Luxembourg": 607950, "Mexico": 125327797, "Netherlands": 17231622, "New Zealand": 4885500, "Norway": 5311916, "Poland": 38413139, "Portugal": 10283822, "Slovak Republic": 5446771, "Slovenia": 2070050, "Spain": 46733038, "Sweden": 10175214, "Switzerland": 8513227, "Turkey": 81407211, "United Kingdom": 66435550,
+"United States": 327167434,},
       country: "France",
       type: "nominal",
       zoom: '',
@@ -102,6 +104,12 @@ export default {
         graphData.children.forEach(headCategory => {
           headCategory.children.forEach(category => {
             category.value = category.value * 1000000;
+          });
+        });
+      } else if (type === "nominal-per-capita") {
+        graphData.children.forEach(headCategory => {
+          headCategory.children.forEach(category => {
+            category.value = category.value * 1000000 / this.population[country];
           });
         });
       } else if (type === "percentGDP") {
@@ -401,7 +409,7 @@ export default {
     },
 
     getValueText: function(value) {
-      if (this.type === "nominal") {
+      if (this.type.startsWith("nominal")) {
         return formatCurrency("$0.2s")(value);
       } else {
         return `${(Math.round(value * 10) / 10)}%`;
