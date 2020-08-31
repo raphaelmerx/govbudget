@@ -8,14 +8,11 @@
           In
           <TypeSelector />
         </h1>
-        <p>
-          <em>For year 2018</em>
-        </p>
       </div>
       <GraphDisplay />
       <p>
         <em>
-          Source:
+          Data is for year 2018. Source:
           <a href="https://stats.oecd.org" target="_blank">stats.oecd.org</a>
         </em>
       </p>
@@ -48,6 +45,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1 {
+  margin-bottom: 4rem;
 }
 h3 {
   margin: 40px 0 0;

@@ -57,6 +57,8 @@ export default {
   color: #9bdaf1;
   font-size: 1rem;
   text-transform: uppercase;
+  font-size: 14px;
+  text-align: left;
 }
 
 .sidebar-item .value {
