@@ -1,13 +1,35 @@
 <template>
-  <div class="chart" id="tree-chart"></div>
+<div id="main-container">
+  <div id="sidebar-container">
+    <SidebarItem :label="this.country + ' GDP'" :value="this.formattedGDP" :has-next="true" />
+    <SidebarItem :label="'Public spending'" :value="this.formattedTotalSpend" :has-next="this.zoom" />
+    <SidebarItem v-if="this.zoom" :label="this.zoom" :value="this.formattedCategorySpend" :has-next="false" />
+  </div>
+  <div id="graph-container">
+    <svg class="treemap" width="100%" height="500">
+      <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
+    </svg>
+  </div>
+</div>
 </template>
 
 <script>
+/* eslint-disable no-unreachable */
 import axios from "axios";
-import * as d3 from "d3";
+import * as d3 from 'd3';
+import { hierarchy, treemap, treemapBinary } from 'd3-hierarchy';
+import { scaleLinear } from 'd3-scale';
+import { formatLocale } from 'd3-format';
+import { measureText } from '../helpers/measureText';
+
+import TreeCell from './TreeCell.vue'
+import SidebarItem from './SidebarItem.vue'
+
+
+const customD3Locale = formatLocale({ currency: ["€", ""]})
 
 function formatCurrency() {
-  let function_ret = d3.format.apply(d3, arguments);
+  let function_ret = customD3Locale.format.apply(d3, arguments);
   return (function(args) {
     return function() {
       return args.apply(d3, arguments).replace(/G/, "B");
@@ -17,6 +39,10 @@ function formatCurrency() {
 
 export default {
   name: "GraphDisplay",
+  components: {
+    TreeCell,
+    SidebarItem,
+  },
   props: {},
   data() {
     return {
@@ -40,8 +66,14 @@ export default {
         Latvia: 29056.05,
         Lithuania: 45264.3769
       },
+      population: {"Australia": 24992860, "Austria": 8837707, "Belgium": 11403740, "Canada": 37058856, "Chile": 18751405, "Colombia": 49834240, "Czech Republic": 10626430, "Denmark": 5789957, "Estonia": 1321977, "Finland": 5515525, "France": 66941698, "Germany": 82914191, "Greece": 10725886, "Hungary": 9767600, "Iceland": 352722, "Ireland": 4857015, "Israel": 8872943, "Italy": 60421797, "Japan": 126443180, "Korea": 51635256, "Latvia": 1927170, "Lithuania": 2801541, "Luxembourg": 607950, "Mexico": 125327797, "Netherlands": 17231622, "New Zealand": 4885500, "Norway": 5311916, "Poland": 38413139, "Portugal": 10283822, "Slovak Republic": 5446771, "Slovenia": 2070050, "Spain": 46733038, "Sweden": 10175214, "Switzerland": 8513227, "Turkey": 81407211, "United Kingdom": 66435550,
+"United States": 327167434,},
       country: "France",
-      type: "nominal"
+      type: "nominal",
+      totalSpend: 0,
+      categorySpend: 0,
+      zoom: '',
+      cells: [],
     };
   },
   mounted() {
@@ -51,12 +83,33 @@ export default {
     });
     this.$root.$on("change-country", country => {
       this.country = country;
+      this.zoom = '';
       this.renderGraph();
     });
     this.$root.$on("change-type", type => {
       this.type = type;
+      this.zoom = '';
       this.renderGraph();
     });
+    this.$root.$on("zoom-cell", title => {
+      this.zoom = title;
+      this.renderGraph();
+    });
+    this.$root.$on("zoom-out", () => {
+      this.zoom = '';
+      this.renderGraph();
+    });
+  },
+  computed: {
+    formattedGDP: function () {
+      return formatCurrency("$0.2s")(this.GDPs[this.country] * 1000000);
+    },
+    formattedTotalSpend: function () {
+      return formatCurrency("$0.2s")(this.totalSpend * 1000000);
+    },
+    formattedCategorySpend: function () {
+      return formatCurrency("$0.2s")(this.categorySpend * 1000000);
+    }
   },
   methods: {
     getData: function() {
@@ -65,13 +118,40 @@ export default {
         .get(`${vm.publicPath}govspend.json`)
         .then(response => response.data);
     },
+    getTotalSpend: function(graphData) {
+        let totalSpend = 0;
+        graphData.children.forEach(headCategory => {
+          headCategory.children.forEach(category => {
+            totalSpend += category.value;
+          });
+        });
+        return totalSpend;
+    },
+    getCategorySpend: function(graphData, category) {
+        const categoryTree = graphData.children.find((c) => c.name === category);
+        let totalSpend = 0;
+        categoryTree.children.forEach(child => { totalSpend += child.value; });
+        return totalSpend;
+    },
     getFormattedGraphData: function(country, type) {
       // clone object
-      const graphData = JSON.parse(JSON.stringify(this.govspend[country]));
+      let graphData = JSON.parse(JSON.stringify(this.govspend[country]));
+
+      this.totalSpend = this.getTotalSpend(graphData);
+      if (this.zoom) {
+        this.categorySpend = this.getCategorySpend(graphData, this.zoom);
+      }
+
       if (type === "nominal") {
         graphData.children.forEach(headCategory => {
           headCategory.children.forEach(category => {
             category.value = category.value * 1000000;
+          });
+        });
+      } else if (type === "nominal-per-capita") {
+        graphData.children.forEach(headCategory => {
+          headCategory.children.forEach(category => {
+            category.value = category.value * 1000000 / this.population[country];
           });
         });
       } else if (type === "percentGDP") {
@@ -81,267 +161,157 @@ export default {
           });
         });
       } else if (type === "percentTotalSpend") {
-        let totalSpend = 0;
         graphData.children.forEach(headCategory => {
           headCategory.children.forEach(category => {
-            totalSpend += category.value;
+            category.value = (category.value / this.totalSpend) * 100;
           });
         });
-        graphData.children.forEach(headCategory => {
-          headCategory.children.forEach(category => {
-            category.value = (category.value / totalSpend) * 100;
-          });
-        });
+      }
+      if (this.zoom) {
+        graphData = graphData.children.find((c) => c.name === this.zoom);
       }
       return graphData;
     },
     renderGraph() {
-      const vm = this;
       var graphData = this.getFormattedGraphData(this.country, this.type);
+      this.buildVirtualChart(graphData);
+    },
 
-      document.getElementById("tree-chart").innerHTML = "";
+    truncateText(text, maxWidth) {
+        // calculate the text width of the full label
+        let label = text;
+        let labelWidth = measureText('16px Source Sans Pro, sans serif', text);
 
-      let format = formatCurrency("0.2s");
-      let height = 500;
-      let width = 954;
-      let getName = function(d) {
-        return d
-          .ancestors()
-          .reverse()
-          .map(d => d.data.name)
-          .join("/");
-      };
+        // check to see if the full label will fit
+        if (labelWidth > maxWidth) {
+            // label won't fit, let's cut it down
+            // determine the average character pixel width
+            const characterWidth = Math.ceil(labelWidth / text.length);
+            // give an additional 30px for the ellipsis
+            const availableWidth = maxWidth - 30;
+            let availableLength = Math.floor(availableWidth / characterWidth);
+            if (availableLength < 1) {
+                // we must show at least one character
+                availableLength = 1;
+            }
 
-      var Tooltip = d3
-        .select("#tree-chart")
-        .append("div")
-        .style("opacity", 0)
-        .attr("class", "tooltip")
-        .style("background-color", "white")
-        .style("border", "solid")
-        .style("border-width", "2px")
-        .style("border-radius", "5px")
-        .style("padding", "5px");
-
-      // Three function that change the tooltip when user hover / move / leave a cell
-      var mouseover = function() {
-        Tooltip.style("opacity", 1);
-        d3.select(this)
-          .style("stroke", "black")
-          .style("opacity", 1);
-      };
-      var mousemove = function(d) {
-        let windowWidth = window.innerWidth,
-          xPosition =
-            windowWidth - d3.event.pageX < 300
-              ? d3.event.pageX - 300
-              : d3.event.pageX + 5,
-          yPosition = d3.event.pageY + 5;
-        console.log(d);
-        Tooltip.html(d.data.name + ': ' + format(d.value))
-          .style("left", xPosition + "px")
-          .style("top", yPosition + "px");
-      };
-      var mouseleave = function() {
-        Tooltip.style("opacity", 0);
-        d3.select(this)
-          .style("stroke", "none")
-          .style("opacity", 0.8);
-      };
-
-      function tile(node, x0, y0, x1, y1) {
-        d3.treemapBinary(node, 0, 0, width, height);
-        for (const child of node.children) {
-          child.x0 = x0 + (child.x0 / width) * (x1 - x0);
-          child.x1 = x0 + (child.x1 / width) * (x1 - x0);
-          child.y0 = y0 + (child.y0 / height) * (y1 - y0);
-          child.y1 = y0 + (child.y1 / height) * (y1 - y0);
+            // substring the label to this length
+            if (availableLength < text.length) {
+                label = `${label.substring(0, availableLength)}...`;
+            }
         }
-      }
 
-      const treemap = data =>
-        d3.treemap().tile(tile)(
-          d3
-            .hierarchy(data)
+        return label;
+    },
+
+    getValueText: function(value) {
+      if (this.type.startsWith("nominal")) {
+        return formatCurrency("$0.2s")(value);
+      } else {
+        return `${(Math.round(value * 10) / 10)}%`;
+      }
+    },
+
+    buildVirtualCell(data, scale) {
+        const height = data.y1 - data.y0;
+        const width = data.x1 - data.x0;
+
+        let value = data.value;
+
+        const valueText = this.getValueText(value);
+
+        // the available width is 40px less than the box width to account for 20px of padding on
+        // each side
+        const usableWidth = width - 40;
+        let name = data.data.name;
+        const title = this.truncateText(name, usableWidth);
+        let color = scale(value);
+
+        const cell = {
+            width,
+            height,
+            x: data.x0,
+            y: data.y0,
+            data: data.data,
+            color,
+            title: {
+                text: title,
+                x: (width / 2),
+                y: (height / 2) - 5 // shift it up slightly so the full title + subtitle combo is vertically centered
+            },
+            fullTitle: name,
+            subtitle: {
+                text: valueText,
+                x: (width / 2),
+                y: (height / 2) + 15 // to place the subtitle below the title
+            }
+        };
+
+        return cell;
+    },
+
+    buildVirtualChart: function(graphData) {
+      const treemapData = hierarchy(graphData)
             .sum(d => d.value)
             .sort((a, b) => b.value - a.value)
-        );
 
-      let chart = () => {
-        const x = d3.scaleLinear().rangeRound([0, width]);
-        const y = d3.scaleLinear().rangeRound([0, height]);
+      const availableWidth = document.querySelector('#graph-container').offsetWidth;
 
-        const svg = d3
-          .select("#tree-chart")
-          .append("svg")
-          .attr("viewBox", [0.5, -30.5, width, height + 30])
-          .style("font", "10px sans-serif");
+      const tree = treemap()
+          .size([availableWidth, 500])
+          .tile(treemapBinary)
+          .paddingInner(5)
+          .round(true);
 
-        // color scale
-        let color = d3.scaleOrdinal(d3.schemeCategory10);
+      const rootTreeNode = tree(treemapData);
+      const treeItems = rootTreeNode.children;
 
-        let opacity = d3
-          .scaleLinear()
-          .domain([1000000000, 200000000000])
-          .range([0.5, 1]);
+      const maxValue = treeItems[0].value;
+      const minValue = treeItems[treeItems.length - 1].value;
 
-        let group = svg.append("g").call(render, treemap(graphData));
+      let scale = scaleLinear()
+          .domain([minValue, maxValue])
+          .range(['#47BAD9', '#1C4956']);
+      if (treeItems.length === 1) {
+          // in the event that we only have one data item, mock the scale function to only
+          // return one color
+          scale = () => '#47BAD9';
+      }
 
-        function render(group, root) {
-          const node = group
-            .selectAll("g")
-            .data(root.children.concat(root))
-            .join("g");
+      const cells = [];
+      treeItems.forEach((item) => {
+          const cell = this.buildVirtualCell(item, scale);
+          cells.push(cell);
+      });
 
-          node
-            .filter(d => (d === root ? d.parent : d.children))
-            .attr("cursor", "pointer")
-            .on("click", d => (d === root ? zoomout(root) : zoomin(d)));
-
-          node.append("title").text(d => `${getName(d)}\n${format(d.value)}`);
-
-          node
-            .append("rect")
-            .attr(
-              "id",
-              d =>
-                (d.leafUid = Math.random()
-                  .toString(16)
-                  .slice(2)).id
-            )
-            .attr("fill", d => {
-              if (d === root) return "#fff";
-              if (d.children) {
-                return color(d.data.name);
-              }
-              return color(d.parent.data.name);
-            })
-            .attr("opacity", function(d) {
-              if (d.children) return 0.8;
-              return opacity(d.data.value);
-            })
-            .attr("stroke", "#fff")
-            .on("mouseover", mouseover)
-            .on("mousemove", mousemove)
-            .on("mouseleave", mouseleave);
-
-          node
-            .append("clipPath")
-            .attr(
-              "id",
-              d =>
-                (d.clipUid = Math.random()
-                  .toString(16)
-                  .slice(2)).id
-            )
-            .append("use")
-            .attr("xlink:href", d => d.leafUid.href);
-
-          node
-            .append("text")
-            .attr("clip-path", d => d.clipUid)
-            .attr("font-weight", d => (d === root ? "bold" : null))
-            .selectAll("tspan")
-            .data(d =>
-              (d === root ? getName(d) : d.data.name)
-                .split(/(?=[A-Z][^A-Z])/g)
-                .concat(format(d.value))
-            )
-            .join("tspan")
-            .attr("x", 3)
-            .attr(
-              "y",
-              (d, i, nodes) =>
-                `${(i === nodes.length - 1) * 0.3 + 1.1 + i * 0.9}em`
-            )
-            .attr("fill-opacity", (d, i, nodes) =>
-              i === nodes.length - 1 ? 0.7 : null
-            )
-            .attr("font-weight", (d, i, nodes) =>
-              i === nodes.length - 1 ? "normal" : null
-            )
-            .text(d => {
-              let raw = d.replace(/,/g, "");
-              if (isNaN(Number(raw.substr(0, 1)))) {
-                // label e.g. 'Social protection'
-                return d;
-              } else if (vm.type === "nominal") {
-                return `${d}€`;
-              } else {
-                return `${d} %`;
-              }
-            });
-
-          group.call(position, root);
-        }
-
-        function position(group, root) {
-          group
-            .selectAll("g")
-            .attr("transform", d =>
-              d === root
-                ? `translate(0,-30)`
-                : `translate(${x(d.x0)},${y(d.y0)})`
-            )
-            .select("rect")
-            .attr("width", d => (d === root ? width : x(d.x1) - x(d.x0)))
-            .attr("height", d => (d === root ? 30 : y(d.y1) - y(d.y0)));
-        }
-
-        // When zooming in, draw the new nodes on top, and fade them in.
-        function zoomin(d) {
-          const group0 = group.attr("pointer-events", "none");
-          const group1 = (group = svg.append("g").call(render, d));
-
-          x.domain([d.x0, d.x1]);
-          y.domain([d.y0, d.y1]);
-
-          svg
-            .transition()
-            .duration(750)
-            .call(t =>
-              group0
-                .transition(t)
-                .remove()
-                .call(position, d.parent)
-            )
-            .call(t =>
-              group1
-                .transition(t)
-                .attrTween("opacity", () => d3.interpolate(0, 1))
-                .call(position, d)
-            );
-        }
-
-        // When zooming out, draw the old nodes on top, and fade them out.
-        function zoomout(d) {
-          const group0 = group.attr("pointer-events", "none");
-          const group1 = (group = svg.insert("g", "*").call(render, d.parent));
-
-          x.domain([d.parent.x0, d.parent.x1]);
-          y.domain([d.parent.y0, d.parent.y1]);
-
-          svg
-            .transition()
-            .duration(750)
-            .call(t =>
-              group0
-                .transition(t)
-                .remove()
-                .attrTween("opacity", () => d3.interpolate(1, 0))
-                .call(position, d)
-            )
-            .call(t => group1.transition(t).call(position, d.parent));
-        }
-
-        return svg.node();
-      };
-
-      chart();
+      this.cells = cells;
     }
   }
 };
 </script>
 
 <style scoped>
+#main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 480px) {
+  #sidebar-container {
+    display: none;
+  }
+}
+
+#sidebar-container {
+  min-width: 250px;
+  flex-grow: 1;
+  background-color: rgb(50, 58, 69);
+  color: white;
+  margin-right: 2rem;
+  padding-top: 2rem;
+}
+
+#graph-container {
+  flex-grow: 9;
+}
 </style>

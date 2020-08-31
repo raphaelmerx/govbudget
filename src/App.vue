@@ -1,40 +1,40 @@
 <template>
   <div id="app">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
-        View public finances for
-        <CountrySelector />
-      </h1>
-      <h1 id="timor-leste-ministério-da-saúde-covid-19-dashboard">
-        In
-        <TypeSelector />
-      </h1>
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>
+          View public finances for
+          <CountrySelector />
+          In
+          <TypeSelector />
+        </h1>
+      </div>
+      <GraphDisplay />
       <p>
-        <em>For year 2018</em>
+        <em>
+          Data is for year 2018. Source:
+          <a href="https://stats.oecd.org" target="_blank">stats.oecd.org</a>
+        </em>
       </p>
     </div>
-    <GraphDisplay />
-      <p>
-        <em>Source: <a href="https://stats.oecd.org" target="_blank"> stats.oecd.org</a></em>
-      </p>
-  </div>
   </div>
 </template>
 
 <script>
-import CountrySelector from './components/CountrySelector.vue'
-import GraphDisplay from './components/GraphDisplay.vue'
-import TypeSelector from './components/TypeSelector.vue'
+import CountrySelector from "./components/CountrySelector.vue";
+import GraphDisplay from "./components/GraphDisplay.vue";
+import TypeSelector from "./components/TypeSelector.vue";
+
+import './assets/styles/index.css';
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     CountrySelector,
     GraphDisplay,
-    TypeSelector,
+    TypeSelector
   }
-}
+};
 </script>
 
 <style>
@@ -45,6 +45,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1 {
+  margin-bottom: 4rem;
 }
 h3 {
   margin: 40px 0 0;
@@ -60,33 +63,110 @@ li {
 a {
   color: #42b983;
 }
-/*
-#tree-chart text {
-  font-size: 2em;
-}
-*/
 
 .tooltip {
-    position: absolute;
-    z-index: 1070;
-    display: block;
-    margin: 0;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: left;
-    text-align: start;
-    text-decoration: none;
-    text-shadow: none;
-    text-transform: none;
-    letter-spacing: normal;
-    word-break: normal;
-    word-spacing: normal;
-    white-space: normal;
-    line-break: auto;
-    font-size: .875rem;
-    word-wrap: break-word;
-    opacity: 0;
+  display: block !important;
+  z-index: 10000;
 }
 
+.tooltip .tooltip-inner {
+  background: black;
+  color: white;
+  border-radius: 16px;
+  padding: 5px 10px 4px;
+}
+
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 5px;
+  border-color: black;
+  z-index: 1;
+}
+
+.tooltip[x-placement^="top"] {
+  margin-bottom: 5px;
+}
+
+.tooltip[x-placement^="top"] .tooltip-arrow {
+  border-width: 5px 5px 0 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="bottom"] {
+  margin-top: 5px;
+}
+
+.tooltip[x-placement^="bottom"] .tooltip-arrow {
+  border-width: 0 5px 5px 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: transparent !important;
+  top: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="right"] {
+  margin-left: 5px;
+}
+
+.tooltip[x-placement^="right"] .tooltip-arrow {
+  border-width: 5px 5px 5px 0;
+  border-left-color: transparent !important;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+  left: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip[x-placement^="left"] {
+  margin-right: 5px;
+}
+
+.tooltip[x-placement^="left"] .tooltip-arrow {
+  border-width: 5px 0 5px 5px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  right: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip.popover .popover-inner {
+  background: #f9f9f9;
+  color: black;
+  padding: 24px;
+  border-radius: 5px;
+  box-shadow: 0 5px 30px rgba(black, .1);
+}
+
+.tooltip.popover .popover-arrow {
+  border-color: #f9f9f9;
+}
+
+.tooltip[aria-hidden='true'] {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .15s, visibility .15s;
+}
+
+.tooltip[aria-hidden='false'] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .15s;
+}
 </style>

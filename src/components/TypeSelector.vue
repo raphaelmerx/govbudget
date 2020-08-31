@@ -1,6 +1,7 @@
 <template>
   <select @change="handleTypeChange">
     <option value="nominal">Euros</option>
+    <option value="nominal-per-capita">Euros per capita</option>
     <option value="percentGDP">% of GDP</option>
     <option value="percentTotalSpend">% of Government spending</option>
   </select>
