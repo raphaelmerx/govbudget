@@ -14,6 +14,7 @@
       }"
     @mousemove="enteredCell"
     @mouseleave="exitedCell"
+    @click="clickedCell"
   >
     <rect
       class="explorer-cell-box"
@@ -37,7 +38,6 @@
       :x="cell.subtitle.x"
       :y="cell.subtitle.y"
     >{{cell.subtitle.text}}</text>
-    <title>{{cell.title.text}}</title>
   </g>
 </template>
 
@@ -62,7 +62,17 @@ export default {
     },
     exitedCell() {
       this.color = this.cell.color;
+    },
+    clickedCell() {
+      const isLeaf = !(this.cell.data.children);
+      if (!isLeaf) {
+        this.$root.$emit('zoom-cell', this.cell.data.name);
+      } else {
+        this.$root.$emit('zoom-out', this.cell.data.name);
+      }
     }
+
+
   },
   computed: {
     position: function() {
@@ -73,6 +83,10 @@ export default {
 </script>
 
 <style scoped>
+.explorer-cell {
+  cursor: pointer;
+}
+
 .explorer-cell-subtitle {
   font-weight: bold;
 }

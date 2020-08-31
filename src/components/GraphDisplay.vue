@@ -60,7 +60,8 @@ export default {
       },
       country: "France",
       type: "nominal",
-      cells: []
+      zoom: '',
+      cells: [],
     };
   },
   mounted() {
@@ -70,10 +71,20 @@ export default {
     });
     this.$root.$on("change-country", country => {
       this.country = country;
+      this.zoom = '';
       this.renderGraph();
     });
     this.$root.$on("change-type", type => {
       this.type = type;
+      this.zoom = '';
+      this.renderGraph();
+    });
+    this.$root.$on("zoom-cell", title => {
+      this.zoom = title;
+      this.renderGraph();
+    });
+    this.$root.$on("zoom-out", () => {
+      this.zoom = '';
       this.renderGraph();
     });
   },
@@ -86,7 +97,7 @@ export default {
     },
     getFormattedGraphData: function(country, type) {
       // clone object
-      const graphData = JSON.parse(JSON.stringify(this.govspend[country]));
+      let graphData = JSON.parse(JSON.stringify(this.govspend[country]));
       if (type === "nominal") {
         graphData.children.forEach(headCategory => {
           headCategory.children.forEach(category => {
@@ -111,6 +122,9 @@ export default {
             category.value = (category.value / totalSpend) * 100;
           });
         });
+      }
+      if (this.zoom) {
+        graphData = graphData.children.find((c) => c.name === this.zoom);
       }
       return graphData;
     },
