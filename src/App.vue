@@ -5,7 +5,7 @@
         <h1>
           View public finances for
           <CountrySelector />
-          In
+          in
           <TypeSelector />
         </h1>
       </div>

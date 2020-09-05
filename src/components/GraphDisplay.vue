@@ -36,28 +36,11 @@ export default {
     return {
       publicPath: process.env.BASE_URL,
       govspend: null,
-      GDPs: {
-        Austria: 385711.94,
-        Belgium: 459531.6,
-        Finland: 233662.0,
-        Germany: 3344370.0,
-        Greece: 184713.6072,
-        Ireland: 324038.1891,
-        Spain: 1202193.0,
-        Estonia: 26035.854,
-        France: 2360687.0,
-        Italy: 1766168.2,
-        Netherlands: 773987.0,
-        Portugal: 204304.761,
-        Slovenia: 45754.8179,
-        "Slovak Republic": 89605.907,
-        Latvia: 29056.05,
-        Lithuania: 45264.3769
-      },
-      population: {"Australia": 24992860, "Austria": 8837707, "Belgium": 11403740, "Canada": 37058856, "Chile": 18751405, "Colombia": 49834240, "Czech Republic": 10626430, "Denmark": 5789957, "Estonia": 1321977, "Finland": 5515525, "France": 66941698, "Germany": 82914191, "Greece": 10725886, "Hungary": 9767600, "Iceland": 352722, "Ireland": 4857015, "Israel": 8872943, "Italy": 60421797, "Japan": 126443180, "Korea": 51635256, "Latvia": 1927170, "Lithuania": 2801541, "Luxembourg": 607950, "Mexico": 125327797, "Netherlands": 17231622, "New Zealand": 4885500, "Norway": 5311916, "Poland": 38413139, "Portugal": 10283822, "Slovak Republic": 5446771, "Slovenia": 2070050, "Spain": 46733038, "Sweden": 10175214, "Switzerland": 8513227, "Turkey": 81407211, "United Kingdom": 66435550,
-"United States": 327167434,},
-      country: "France",
-      type: "nominal",
+      GDPs: {'Australia': 1947246.0, 'Austria': 385711.94, 'Belgium': 459531.6, 'Czech Republic': 5408766.0, 'Denmark': 2245954.115, 'Estonia': 26035.854, 'Finland': 233662.0, 'France': 2360687.0, 'Germany': 3344370.0, 'Greece': 184713.6072, 'Hungary': 42661805.0, 'Iceland': 2787386.0031, 'Ireland': 324038.1891, 'Italy': 1766168.2, 'Japan': 547125500.0, 'Latvia': 29056.05, 'Lithuania': 45264.3769, 'Netherlands': 773987.0, 'Norway': 3530860.0, 'Poland': 2120480.0, 'Portugal': 204304.761, 'Slovak Republic': 89605.907, 'Slovenia': 45754.8179, 'Spain': 1202193.0, 'Sweden': 4828306.0, 'Switzerland': 689545.26, 'United Kingdom': 2144304.0},
+      population: {"Australia": 24992860, "Austria": 8837707, "Belgium": 11403740, "Canada": 37058856, "Chile": 18751405, "Colombia": 49834240, "Czech Republic": 10626430, "Denmark": 5789957, "Estonia": 1321977, "Finland": 5515525, "France": 66941698, "Germany": 82914191, "Greece": 10725886, "Hungary": 9767600, "Iceland": 352722, "Ireland": 4857015, "Israel": 8872943, "Italy": 60421797, "Japan": 126443180, "Korea": 51635256, "Latvia": 1927170, "Lithuania": 2801541, "Luxembourg": 607950, "Mexico": 125327797, "Netherlands": 17231622, "New Zealand": 4885500, "Norway": 5311916, "Poland": 38413139, "Portugal": 10283822, "Slovak Republic": 5446771, "Slovenia": 2070050, "Spain": 46733038, "Sweden": 10175214, "Switzerland": 8513227, "Turkey": 81407211, "United Kingdom": 66435550, "United States": 327167434,},
+      currency: {'Australia': 'A$', 'Czech Republic': 'CZK', 'Denmark': 'DKK', 'Hungary': 'HUF', 'Iceland': 'ISK', 'Japan': '¥', 'Norway': 'NOK', 'Poland': 'PLN', 'Sweden': 'SEK', 'Switzerland': 'CHF', 'United Kingdom': '£'},
+      country: "Australia",
+      type: "percentTotalSpend",
       totalSpend: 0,
       categorySpend: 0,
       zoom: '',
@@ -67,7 +50,7 @@ export default {
   mounted() {
     this.getData().then(govspendData => {
       this.govspend = govspendData;
-      this.renderGraph("France");
+      this.renderGraph();
     });
     this.$root.$on("change-country", country => {
       this.country = country;
@@ -90,13 +73,15 @@ export default {
   },
   computed: {
     formattedGDP: function () {
-      return formatCurrency("$0.2s")(this.GDPs[this.country] * 1000000);
+      return this.getFormattedAmount(this.GDPs[this.country] * 1000000);
     },
     formattedTotalSpend: function () {
-      return formatCurrency("$0.2s")(this.totalSpend * 1000000);
+      const amount = this.getFormattedAmount(this.totalSpend * 1000000);
+      const percentGDP = Math.round(this.totalSpend / this.GDPs[this.country] * 1000) / 10;
+      return `${amount} (${percentGDP}% of GDP)`
     },
     formattedCategorySpend: function () {
-      return formatCurrency("$0.2s")(this.categorySpend * 1000000);
+      return this.getFormattedAmount(this.categorySpend * 1000000);
     }
   },
   methods: {
@@ -105,6 +90,11 @@ export default {
       return axios
         .get(`${vm.publicPath}govspend.json`)
         .then(response => response.data);
+    },
+    getFormattedAmount: function(amount) {
+      const currencyCode = this.currency[this.country];
+      if (currencyCode) return formatCurrency(currencyCode + ' ', "$0.2s")(amount);
+      return formatCurrency('€ ', "$0.2s")(amount);
     },
     getTotalSpend: function(graphData) {
         let totalSpend = 0;
@@ -194,7 +184,7 @@ export default {
 
     getValueText: function(value) {
       if (this.type.startsWith("nominal")) {
-        return formatCurrency("$0.2s")(value);
+        return this.getFormattedAmount(value);
       } else {
         return `${(Math.round(value * 10) / 10)}%`;
       }

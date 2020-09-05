@@ -661,6 +661,668 @@
       }
     ]
   },
+  "Czech Republic": {
+    "name": "Czech Republic",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 143430.0
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 2470.0
+          },
+          {
+            "name": "General services",
+            "value": 5752.0
+          },
+          {
+            "name": "Basic research",
+            "value": 31327.0
+          },
+          {
+            "name": "RandD General public services",
+            "value": 3434.0
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 10341.0
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 42340.0
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 41771.0
+          },
+          {
+            "name": "Civil defence",
+            "value": 235.0
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 1324.0
+          },
+          {
+            "name": "RandD Defence",
+            "value": 397.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 3007.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 51001.0
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 15140.0
+          },
+          {
+            "name": "Law courts",
+            "value": 16258.0
+          },
+          {
+            "name": "Prisons",
+            "value": 10168.0
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 69.0
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 7892.0
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 21372.0
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 27031.0
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 49516.0
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 842.0
+          },
+          {
+            "name": "Transport",
+            "value": 185118.0
+          },
+          {
+            "name": "Communication",
+            "value": 2571.0
+          },
+          {
+            "name": "Other industries",
+            "value": 9085.0
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 13393.0
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 11238.0
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 15838.0
+          },
+          {
+            "name": "Waste water management",
+            "value": 13548.0
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 344.0
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 12647.0
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 1311.0
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 2379.0
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 13554.0
+          },
+          {
+            "name": "Community development",
+            "value": 14885.0
+          },
+          {
+            "name": "Water supply",
+            "value": 5445.0
+          },
+          {
+            "name": "Street lighting",
+            "value": 4743.0
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 26.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 3082.0
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 47483.0
+          },
+          {
+            "name": "Outpatient services",
+            "value": 82692.0
+          },
+          {
+            "name": "Hospital services",
+            "value": 188580.0
+          },
+          {
+            "name": "Public health services",
+            "value": 71051.0
+          },
+          {
+            "name": "RandD Health",
+            "value": 3768.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 11423.0
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 25969.0
+          },
+          {
+            "name": "Cultural services",
+            "value": 35369.0
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 9613.0
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 1898.0
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 1236.0
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 5546.0
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 58487.0
+          },
+          {
+            "name": "Secondary education",
+            "value": 108823.0
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 1216.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 43140.0
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 5362.0
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 11941.0
+          },
+          {
+            "name": "RandD Education",
+            "value": 13962.0
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 4292.0
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 115070.0
+          },
+          {
+            "name": "Survivors",
+            "value": 28147.0
+          },
+          {
+            "name": "Family and children",
+            "value": 57487.0
+          },
+          {
+            "name": "Unemployment",
+            "value": 7732.0
+          },
+          {
+            "name": "Housing",
+            "value": 9651.0
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 19190.0
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 192.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 11118.0
+          },
+          {
+            "name": "Old age",
+            "value": 391445.0
+          }
+        ]
+      }
+    ]
+  },
+  "Denmark": {
+    "name": "Denmark",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 36220.0
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 19033.0
+          },
+          {
+            "name": "General services",
+            "value": 9860.0
+          },
+          {
+            "name": "Basic research",
+            "value": 34841.0
+          },
+          {
+            "name": "RandD General public services",
+            "value": 334.0
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 23066.0
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 25126.0
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 25040.0
+          },
+          {
+            "name": "Civil defence",
+            "value": 621.0
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 83.0
+          },
+          {
+            "name": "RandD Defence",
+            "value": 0.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 472.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 12205.0
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 1354.0
+          },
+          {
+            "name": "Law courts",
+            "value": 3433.0
+          },
+          {
+            "name": "Prisons",
+            "value": 3745.0
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 0.0
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 411.0
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 12922.0
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 3597.0
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 9176.0
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 19.0
+          },
+          {
+            "name": "Transport",
+            "value": 42607.0
+          },
+          {
+            "name": "Communication",
+            "value": 1490.0
+          },
+          {
+            "name": "Other industries",
+            "value": 1283.0
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 2817.0
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 177.0
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 887.0
+          },
+          {
+            "name": "Waste water management",
+            "value": 233.0
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 739.0
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 4275.0
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 448.0
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 2339.0
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 4918.0
+          },
+          {
+            "name": "Community development",
+            "value": 0.0
+          },
+          {
+            "name": "Water supply",
+            "value": 0.0
+          },
+          {
+            "name": "Street lighting",
+            "value": 0.0
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 0.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 404.0
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 12153.0
+          },
+          {
+            "name": "Outpatient services",
+            "value": 27234.0
+          },
+          {
+            "name": "Hospital services",
+            "value": 131987.0
+          },
+          {
+            "name": "Public health services",
+            "value": 3021.0
+          },
+          {
+            "name": "RandD Health",
+            "value": 4512.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 7983.0
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 8692.0
+          },
+          {
+            "name": "Cultural services",
+            "value": 13189.0
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 4678.0
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 9225.0
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 10.0
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 476.0
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 65680.0
+          },
+          {
+            "name": "Secondary education",
+            "value": 36280.0
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 0.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 35542.0
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 2499.0
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 1312.0
+          },
+          {
+            "name": "RandD Education",
+            "value": 905.0
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 2036.0
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 97703.0
+          },
+          {
+            "name": "Survivors",
+            "value": 190.0
+          },
+          {
+            "name": "Family and children",
+            "value": 97247.0
+          },
+          {
+            "name": "Unemployment",
+            "value": 45912.0
+          },
+          {
+            "name": "Housing",
+            "value": 14825.0
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 40255.0
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 326.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 10919.0
+          },
+          {
+            "name": "Old age",
+            "value": 185182.0
+          }
+        ]
+      }
+    ]
+  },
   "Finland": {
     "name": "Finland",
     "children": [
@@ -2316,6 +2978,337 @@
       }
     ]
   },
+  "Switzerland": {
+    "name": "Switzerland",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 6398.91
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 2627.04
+          },
+          {
+            "name": "General services",
+            "value": 10162.45
+          },
+          {
+            "name": "Basic research",
+            "value": 10342.18
+          },
+          {
+            "name": "RandD General public services",
+            "value": 5.35
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 0.0
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 2416.34
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 4853.84
+          },
+          {
+            "name": "Civil defence",
+            "value": 515.62
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 144.57
+          },
+          {
+            "name": "RandD Defence",
+            "value": 12.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 4941.61
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 837.89
+          },
+          {
+            "name": "Law courts",
+            "value": 1969.64
+          },
+          {
+            "name": "Prisons",
+            "value": 1350.3
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 1.5
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 2622.91
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 655.09
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 4811.93
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 2330.4
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 0.0
+          },
+          {
+            "name": "Transport",
+            "value": 17796.87
+          },
+          {
+            "name": "Communication",
+            "value": 57.32
+          },
+          {
+            "name": "Other industries",
+            "value": 985.98
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 624.59
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 36.41
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 1074.6
+          },
+          {
+            "name": "Waste water management",
+            "value": 1800.26
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 463.03
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 273.59
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 201.88
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 259.91
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 0.0
+          },
+          {
+            "name": "Community development",
+            "value": 410.0
+          },
+          {
+            "name": "Water supply",
+            "value": 829.11
+          },
+          {
+            "name": "Street lighting",
+            "value": 0.0
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 0.13
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 0.0
+          },
+          {
+            "name": "Outpatient services",
+            "value": 1333.76
+          },
+          {
+            "name": "Hospital services",
+            "value": 11777.63
+          },
+          {
+            "name": "Public health services",
+            "value": 796.28
+          },
+          {
+            "name": "RandD Health",
+            "value": 707.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 364.18
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 2413.75
+          },
+          {
+            "name": "Cultural services",
+            "value": 2810.63
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 136.52
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 310.17
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 1.4
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 8512.54
+          },
+          {
+            "name": "Secondary education",
+            "value": 11671.3
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 0.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 8662.25
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 7760.47
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 722.58
+          },
+          {
+            "name": "RandD Education",
+            "value": 510.16
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 570.4
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 19869.28
+          },
+          {
+            "name": "Survivors",
+            "value": 2100.53
+          },
+          {
+            "name": "Family and children",
+            "value": 3209.45
+          },
+          {
+            "name": "Unemployment",
+            "value": 7372.31
+          },
+          {
+            "name": "Housing",
+            "value": 160.97
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 10760.76
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 3.44
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 1769.91
+          },
+          {
+            "name": "Old age",
+            "value": 46469.71
+          }
+        ]
+      }
+    ]
+  },
   "Estonia": {
     "name": "Estonia",
     "children": [
@@ -2647,6 +3640,668 @@
       }
     ]
   },
+  "Iceland": {
+    "name": "Iceland",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 34835.7
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 5625.53
+          },
+          {
+            "name": "General services",
+            "value": 31664.95
+          },
+          {
+            "name": "Basic research",
+            "value": 2761.58
+          },
+          {
+            "name": "RandD General public services",
+            "value": 0.0
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 9359.08
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 82304.23
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 0.0
+          },
+          {
+            "name": "Civil defence",
+            "value": 404.54
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 185.5
+          },
+          {
+            "name": "RandD Defence",
+            "value": 0.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 21666.86
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 2600.21
+          },
+          {
+            "name": "Law courts",
+            "value": 7010.54
+          },
+          {
+            "name": "Prisons",
+            "value": 2036.93
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 2.09
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 6831.97
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 16732.58
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 19951.45
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 4055.59
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 618.46
+          },
+          {
+            "name": "Transport",
+            "value": 84793.52
+          },
+          {
+            "name": "Communication",
+            "value": 972.68
+          },
+          {
+            "name": "Other industries",
+            "value": 2606.05
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 10454.5
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 8050.79
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 10839.82
+          },
+          {
+            "name": "Waste water management",
+            "value": 0.0
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 0.0
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 6186.43
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 111.72
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 1352.05
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 3368.7
+          },
+          {
+            "name": "Community development",
+            "value": 10649.62
+          },
+          {
+            "name": "Water supply",
+            "value": 0.0
+          },
+          {
+            "name": "Street lighting",
+            "value": 1618.93
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 0.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 171.57
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 14030.29
+          },
+          {
+            "name": "Outpatient services",
+            "value": 50185.95
+          },
+          {
+            "name": "Hospital services",
+            "value": 148783.88
+          },
+          {
+            "name": "Public health services",
+            "value": 457.8
+          },
+          {
+            "name": "RandD Health",
+            "value": 81.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 5169.28
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 43432.09
+          },
+          {
+            "name": "Cultural services",
+            "value": 29472.19
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 6428.24
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 8175.32
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 725.75
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 10.5
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 89875.41
+          },
+          {
+            "name": "Secondary education",
+            "value": 62851.34
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 47.29
+          },
+          {
+            "name": "Tertiary education",
+            "value": 41011.68
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 2964.73
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 5236.0
+          },
+          {
+            "name": "RandD Education",
+            "value": 0.0
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 3411.63
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 88951.22
+          },
+          {
+            "name": "Survivors",
+            "value": 378.0
+          },
+          {
+            "name": "Family and children",
+            "value": 58300.66
+          },
+          {
+            "name": "Unemployment",
+            "value": 15209.96
+          },
+          {
+            "name": "Housing",
+            "value": 10761.44
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 8650.74
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 0.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 9710.53
+          },
+          {
+            "name": "Old age",
+            "value": 86428.89
+          }
+        ]
+      }
+    ]
+  },
+  "Hungary": {
+    "name": "Hungary",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 1744293.0
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 2226.0
+          },
+          {
+            "name": "General services",
+            "value": 531427.0
+          },
+          {
+            "name": "Basic research",
+            "value": 151078.0
+          },
+          {
+            "name": "RandD General public services",
+            "value": 9448.0
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 55729.0
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 1065149.0
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 386200.0
+          },
+          {
+            "name": "Civil defence",
+            "value": 1672.0
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 14100.0
+          },
+          {
+            "name": "RandD Defence",
+            "value": 27.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 72.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 596992.0
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 92277.0
+          },
+          {
+            "name": "Law courts",
+            "value": 178567.0
+          },
+          {
+            "name": "Prisons",
+            "value": 82189.0
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 8.0
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 10470.0
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 774093.0
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 183313.0
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 65678.0
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 44090.0
+          },
+          {
+            "name": "Transport",
+            "value": 1881256.0
+          },
+          {
+            "name": "Communication",
+            "value": 17155.0
+          },
+          {
+            "name": "Other industries",
+            "value": 198495.0
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 70022.0
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 31351.0
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 80909.0
+          },
+          {
+            "name": "Waste water management",
+            "value": 60282.0
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 5868.0
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 22540.0
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 980.0
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 17714.0
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 81017.0
+          },
+          {
+            "name": "Community development",
+            "value": 12395.0
+          },
+          {
+            "name": "Water supply",
+            "value": 32665.0
+          },
+          {
+            "name": "Street lighting",
+            "value": 27203.0
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 0.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 146425.0
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 356719.0
+          },
+          {
+            "name": "Outpatient services",
+            "value": 589892.0
+          },
+          {
+            "name": "Hospital services",
+            "value": 913605.0
+          },
+          {
+            "name": "Public health services",
+            "value": 59201.0
+          },
+          {
+            "name": "RandD Health",
+            "value": 11524.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 85721.0
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 424107.0
+          },
+          {
+            "name": "Cultural services",
+            "value": 538552.0
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 157133.0
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 181436.0
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 409.0
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 59644.0
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 546818.0
+          },
+          {
+            "name": "Secondary education",
+            "value": 814577.0
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 1308.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 403919.0
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 52053.0
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 228703.0
+          },
+          {
+            "name": "RandD Education",
+            "value": 23843.0
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 112762.0
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 1189043.0
+          },
+          {
+            "name": "Survivors",
+            "value": 378395.0
+          },
+          {
+            "name": "Family and children",
+            "value": 717261.0
+          },
+          {
+            "name": "Unemployment",
+            "value": 108461.0
+          },
+          {
+            "name": "Housing",
+            "value": 33931.0
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 322004.0
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 1474.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 73235.0
+          },
+          {
+            "name": "Old age",
+            "value": 2856090.0
+          }
+        ]
+      }
+    ]
+  },
   "France": {
     "name": "France",
     "children": [
@@ -2973,6 +4628,668 @@
           {
             "name": "Old age",
             "value": 312126.0
+          }
+        ]
+      }
+    ]
+  },
+  "United Kingdom": {
+    "name": "United Kingdom",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 22894.0
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 10641.0
+          },
+          {
+            "name": "General services",
+            "value": 12494.0
+          },
+          {
+            "name": "Basic research",
+            "value": 232.0
+          },
+          {
+            "name": "RandD General public services",
+            "value": 258.0
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 738.0
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 52525.0
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 36772.0
+          },
+          {
+            "name": "Civil defence",
+            "value": 79.0
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 837.0
+          },
+          {
+            "name": "RandD Defence",
+            "value": 2071.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 199.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 21405.0
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 3197.0
+          },
+          {
+            "name": "Law courts",
+            "value": 8248.0
+          },
+          {
+            "name": "Prisons",
+            "value": 4239.0
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 72.0
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 1670.0
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 12009.0
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 2491.0
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 7365.0
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 279.0
+          },
+          {
+            "name": "Transport",
+            "value": 37015.0
+          },
+          {
+            "name": "Communication",
+            "value": 288.0
+          },
+          {
+            "name": "Other industries",
+            "value": 225.0
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 9791.0
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 49.0
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 11720.0
+          },
+          {
+            "name": "Waste water management",
+            "value": 0.0
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 59.0
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 472.0
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 471.0
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 1772.0
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 6086.0
+          },
+          {
+            "name": "Community development",
+            "value": 8294.0
+          },
+          {
+            "name": "Water supply",
+            "value": 431.0
+          },
+          {
+            "name": "Street lighting",
+            "value": 739.0
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 4.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 1668.0
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 10380.0
+          },
+          {
+            "name": "Outpatient services",
+            "value": 20659.0
+          },
+          {
+            "name": "Hospital services",
+            "value": 117295.0
+          },
+          {
+            "name": "Public health services",
+            "value": 4507.0
+          },
+          {
+            "name": "RandD Health",
+            "value": 2971.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 5084.0
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 3622.0
+          },
+          {
+            "name": "Cultural services",
+            "value": 4959.0
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 4686.0
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 125.0
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 150.0
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": -791.0
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 21958.0
+          },
+          {
+            "name": "Secondary education",
+            "value": 44088.0
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 8247.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 13640.0
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 6730.0
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 624.0
+          },
+          {
+            "name": "RandD Education",
+            "value": 1961.0
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 6542.0
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 51792.0
+          },
+          {
+            "name": "Survivors",
+            "value": 1110.0
+          },
+          {
+            "name": "Family and children",
+            "value": 27218.0
+          },
+          {
+            "name": "Unemployment",
+            "value": 1896.0
+          },
+          {
+            "name": "Housing",
+            "value": 21246.0
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 33466.0
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 0.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 6269.0
+          },
+          {
+            "name": "Old age",
+            "value": 177573.0
+          }
+        ]
+      }
+    ]
+  },
+  "Poland": {
+    "name": "Poland",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 52240.64
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 176.9
+          },
+          {
+            "name": "General services",
+            "value": 2332.95
+          },
+          {
+            "name": "Basic research",
+            "value": 4908.35
+          },
+          {
+            "name": "RandD General public services",
+            "value": 32.15
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 1225.61
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 31662.99
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 33949.06
+          },
+          {
+            "name": "Civil defence",
+            "value": 15.67
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 241.06
+          },
+          {
+            "name": "RandD Defence",
+            "value": 198.16
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 259.41
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 22853.03
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 4257.99
+          },
+          {
+            "name": "Law courts",
+            "value": 10794.84
+          },
+          {
+            "name": "Prisons",
+            "value": 5038.21
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 194.16
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 1685.66
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 10821.53
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 10354.37
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 3808.75
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 1403.42
+          },
+          {
+            "name": "Transport",
+            "value": 75592.84
+          },
+          {
+            "name": "Communication",
+            "value": 264.75
+          },
+          {
+            "name": "Other industries",
+            "value": 691.64
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 2548.36
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 784.68
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 2155.67
+          },
+          {
+            "name": "Waste water management",
+            "value": 4493.43
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 610.22
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 430.26
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 515.0
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 2200.98
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 6594.9
+          },
+          {
+            "name": "Community development",
+            "value": 1146.11
+          },
+          {
+            "name": "Water supply",
+            "value": 2064.11
+          },
+          {
+            "name": "Street lighting",
+            "value": 1647.2
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 0.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 1099.8
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 1354.79
+          },
+          {
+            "name": "Outpatient services",
+            "value": 30074.24
+          },
+          {
+            "name": "Hospital services",
+            "value": 64313.09
+          },
+          {
+            "name": "Public health services",
+            "value": 1438.38
+          },
+          {
+            "name": "RandD Health",
+            "value": 2027.84
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 2676.39
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 9577.02
+          },
+          {
+            "name": "Cultural services",
+            "value": 16507.52
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 1013.51
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 579.09
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 339.0
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 294.01
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 44614.19
+          },
+          {
+            "name": "Secondary education",
+            "value": 24130.41
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 72.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 25794.54
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 1887.49
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 6018.74
+          },
+          {
+            "name": "RandD Education",
+            "value": 1673.82
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 1815.19
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 47534.43
+          },
+          {
+            "name": "Survivors",
+            "value": 33915.16
+          },
+          {
+            "name": "Family and children",
+            "value": 54088.98
+          },
+          {
+            "name": "Unemployment",
+            "value": 5116.94
+          },
+          {
+            "name": "Housing",
+            "value": 692.97
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 4883.92
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 0.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 2203.76
+          },
+          {
+            "name": "Old age",
+            "value": 194944.77
           }
         ]
       }
@@ -3640,6 +5957,668 @@
       }
     ]
   },
+  "Norway": {
+    "name": "Norway",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 61413.0
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 31075.0
+          },
+          {
+            "name": "General services",
+            "value": 17864.0
+          },
+          {
+            "name": "Basic research",
+            "value": 19236.0
+          },
+          {
+            "name": "RandD General public services",
+            "value": 3577.0
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 859.0
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 24480.0
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 55650.0
+          },
+          {
+            "name": "Civil defence",
+            "value": 1251.0
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 1168.0
+          },
+          {
+            "name": "RandD Defence",
+            "value": 1450.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 1053.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 19882.0
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 9045.0
+          },
+          {
+            "name": "Law courts",
+            "value": 5243.0
+          },
+          {
+            "name": "Prisons",
+            "value": 5210.0
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 873.0
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 1191.0
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 16978.0
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 18069.0
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 3865.0
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 210.0
+          },
+          {
+            "name": "Transport",
+            "value": 131392.0
+          },
+          {
+            "name": "Communication",
+            "value": 1835.0
+          },
+          {
+            "name": "Other industries",
+            "value": 177.0
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 17804.0
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 6886.0
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 8079.0
+          },
+          {
+            "name": "Waste water management",
+            "value": 13625.0
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 3458.0
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 1658.0
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 1353.0
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 3712.0
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 16327.0
+          },
+          {
+            "name": "Community development",
+            "value": 0.0
+          },
+          {
+            "name": "Water supply",
+            "value": 11566.0
+          },
+          {
+            "name": "Street lighting",
+            "value": 0.0
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 24.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 18214.0
+          },
+          {
+            "name": "Outpatient services",
+            "value": 67609.0
+          },
+          {
+            "name": "Hospital services",
+            "value": 171133.0
+          },
+          {
+            "name": "Public health services",
+            "value": 8966.0
+          },
+          {
+            "name": "RandD Health",
+            "value": 13953.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 10897.0
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 15654.0
+          },
+          {
+            "name": "Cultural services",
+            "value": 22610.0
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 5207.0
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 10041.0
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 4265.0
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 2728.0
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 84115.0
+          },
+          {
+            "name": "Secondary education",
+            "value": 37722.0
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 849.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 41634.0
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 15827.0
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 6848.0
+          },
+          {
+            "name": "RandD Education",
+            "value": 1324.0
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 3457.0
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 234571.0
+          },
+          {
+            "name": "Survivors",
+            "value": 6236.0
+          },
+          {
+            "name": "Family and children",
+            "value": 118493.0
+          },
+          {
+            "name": "Unemployment",
+            "value": 13117.0
+          },
+          {
+            "name": "Housing",
+            "value": 4311.0
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 30653.0
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 1494.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 15304.0
+          },
+          {
+            "name": "Old age",
+            "value": 250987.0
+          }
+        ]
+      }
+    ]
+  },
+  "Japan": {
+    "name": "Japan",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 3212700.0
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 1183900.0
+          },
+          {
+            "name": "General services",
+            "value": 5158300.0
+          },
+          {
+            "name": "Basic research",
+            "value": 274800.0
+          },
+          {
+            "name": "RandD General public services",
+            "value": 857300.0
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 102500.0
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 9965400.0
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 4944000.0
+          },
+          {
+            "name": "Civil defence",
+            "value": 0.0
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 0.0
+          },
+          {
+            "name": "RandD Defence",
+            "value": 210000.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 2900.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 3608200.0
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 1920700.0
+          },
+          {
+            "name": "Law courts",
+            "value": 571700.0
+          },
+          {
+            "name": "Prisons",
+            "value": 250000.0
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 27300.0
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 421400.0
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 776300.0
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 4710700.0
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 1373400.0
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 1288200.0
+          },
+          {
+            "name": "Transport",
+            "value": 7850000.0
+          },
+          {
+            "name": "Communication",
+            "value": 264500.0
+          },
+          {
+            "name": "Other industries",
+            "value": 2589600.0
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 1235200.0
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 74200.0
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 2379200.0
+          },
+          {
+            "name": "Waste water management",
+            "value": 2937800.0
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 315200.0
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 110000.0
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 47800.0
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 440700.0
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 1099400.0
+          },
+          {
+            "name": "Community development",
+            "value": 2372600.0
+          },
+          {
+            "name": "Water supply",
+            "value": 133100.0
+          },
+          {
+            "name": "Street lighting",
+            "value": 0.0
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 22200.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 5500.0
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 6931200.0
+          },
+          {
+            "name": "Outpatient services",
+            "value": 16229500.0
+          },
+          {
+            "name": "Hospital services",
+            "value": 15305800.0
+          },
+          {
+            "name": "Public health services",
+            "value": 2500300.0
+          },
+          {
+            "name": "RandD Health",
+            "value": 44200.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 923200.0
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 757400.0
+          },
+          {
+            "name": "Cultural services",
+            "value": 1345700.0
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 3500.0
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 700.0
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 12600.0
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 10200.0
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 4796000.0
+          },
+          {
+            "name": "Secondary education",
+            "value": 4950500.0
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 0.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 2731900.0
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 1079400.0
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 814200.0
+          },
+          {
+            "name": "RandD Education",
+            "value": 924800.0
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 2751200.0
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 4821300.0
+          },
+          {
+            "name": "Survivors",
+            "value": 7932100.0
+          },
+          {
+            "name": "Family and children",
+            "value": 10317200.0
+          },
+          {
+            "name": "Unemployment",
+            "value": 1477700.0
+          },
+          {
+            "name": "Housing",
+            "value": 9500.0
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 1572900.0
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 15300.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 1977100.0
+          },
+          {
+            "name": "Old age",
+            "value": 60118100.0
+          }
+        ]
+      }
+    ]
+  },
   "Portugal": {
     "name": "Portugal",
     "children": [
@@ -3966,6 +6945,668 @@
           {
             "name": "Old age",
             "value": 23415.62
+          }
+        ]
+      }
+    ]
+  },
+  "Australia": {
+    "name": "Australia",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 17574.0
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 0.0
+          },
+          {
+            "name": "General services",
+            "value": 2512.0
+          },
+          {
+            "name": "Basic research",
+            "value": 2230.0
+          },
+          {
+            "name": "RandD General public services",
+            "value": 0.0
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 39187.0
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 85.0
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 16366.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 0.0
+          },
+          {
+            "name": "Civil defence",
+            "value": 0.0
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 0.0
+          },
+          {
+            "name": "RandD Defence",
+            "value": 0.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 44926.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 12558.0
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 4540.0
+          },
+          {
+            "name": "Law courts",
+            "value": 8181.0
+          },
+          {
+            "name": "Prisons",
+            "value": 6680.0
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 33.0
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 7071.0
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 7889.0
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 4726.0
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 9549.0
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 3587.0
+          },
+          {
+            "name": "Transport",
+            "value": 62654.0
+          },
+          {
+            "name": "Communication",
+            "value": 428.0
+          },
+          {
+            "name": "Other industries",
+            "value": 1923.0
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 724.0
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 4031.0
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 889.0
+          },
+          {
+            "name": "Waste water management",
+            "value": 1167.0
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 4090.0
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 3585.0
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 9.0
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 7782.0
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 1037.0
+          },
+          {
+            "name": "Community development",
+            "value": 5235.0
+          },
+          {
+            "name": "Water supply",
+            "value": 3409.0
+          },
+          {
+            "name": "Street lighting",
+            "value": 20.0
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 0.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 2058.0
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 14958.0
+          },
+          {
+            "name": "Outpatient services",
+            "value": 13049.0
+          },
+          {
+            "name": "Hospital services",
+            "value": 51731.0
+          },
+          {
+            "name": "Public health services",
+            "value": 6238.0
+          },
+          {
+            "name": "RandD Health",
+            "value": 4264.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 52741.0
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 9267.0
+          },
+          {
+            "name": "Cultural services",
+            "value": 6119.0
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 1693.0
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 0.0
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 0.0
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 1291.0
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 32620.0
+          },
+          {
+            "name": "Secondary education",
+            "value": 25094.0
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 0.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 42909.0
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 3024.0
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 1912.0
+          },
+          {
+            "name": "RandD Education",
+            "value": 0.0
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 8606.0
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 42753.0
+          },
+          {
+            "name": "Survivors",
+            "value": -6.0
+          },
+          {
+            "name": "Family and children",
+            "value": 43117.0
+          },
+          {
+            "name": "Unemployment",
+            "value": 10706.0
+          },
+          {
+            "name": "Housing",
+            "value": 4352.0
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 4640.0
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 8.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 8007.0
+          },
+          {
+            "name": "Old age",
+            "value": 77150.0
+          }
+        ]
+      }
+    ]
+  },
+  "Sweden": {
+    "name": "Sweden",
+    "children": [
+      {
+        "name": "General public services",
+        "children": [
+          {
+            "name": "Executive and legislative organs, financial, fiscal and external affairs",
+            "value": 80719.0
+          },
+          {
+            "name": "Foreign economic aid",
+            "value": 41499.0
+          },
+          {
+            "name": "General services",
+            "value": 115751.0
+          },
+          {
+            "name": "Basic research",
+            "value": 73697.0
+          },
+          {
+            "name": "RandD General public services",
+            "value": 24.0
+          },
+          {
+            "name": "General public services n.e.c.",
+            "value": 3021.0
+          },
+          {
+            "name": "Public debt transactions",
+            "value": 27935.0
+          },
+          {
+            "name": "Transfers of a general character between different levels of government",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Defence",
+        "children": [
+          {
+            "name": "Military defence",
+            "value": 50765.0
+          },
+          {
+            "name": "Civil defence",
+            "value": 2200.0
+          },
+          {
+            "name": "Foreign military aid",
+            "value": 2914.0
+          },
+          {
+            "name": "RandD Defence",
+            "value": 2152.0
+          },
+          {
+            "name": "Defence n.e.c.",
+            "value": 41.0
+          }
+        ]
+      },
+      {
+        "name": "Public order and safety",
+        "children": [
+          {
+            "name": "Police services",
+            "value": 29004.0
+          },
+          {
+            "name": "Fire-protection services",
+            "value": 9852.0
+          },
+          {
+            "name": "Law courts",
+            "value": 12904.0
+          },
+          {
+            "name": "Prisons",
+            "value": 9850.0
+          },
+          {
+            "name": "RandD Public order and safety",
+            "value": 0.0
+          },
+          {
+            "name": "Public order and safety n.e.c.",
+            "value": 858.0
+          }
+        ]
+      },
+      {
+        "name": "Economic affairs",
+        "children": [
+          {
+            "name": "General economic, commercial and labour affairs",
+            "value": 53107.0
+          },
+          {
+            "name": "Agriculture, forestry, fishing and hunting",
+            "value": 7205.0
+          },
+          {
+            "name": "Fuel and energy",
+            "value": 6257.0
+          },
+          {
+            "name": "Mining, manufacturing and construction",
+            "value": 4304.0
+          },
+          {
+            "name": "Transport",
+            "value": 130010.0
+          },
+          {
+            "name": "Communication",
+            "value": 1100.0
+          },
+          {
+            "name": "Other industries",
+            "value": 2235.0
+          },
+          {
+            "name": "RandD Economic affairs",
+            "value": 3991.0
+          },
+          {
+            "name": "Economic affairs n.e.c.",
+            "value": 263.0
+          }
+        ]
+      },
+      {
+        "name": "Environment protection",
+        "children": [
+          {
+            "name": "Waste management",
+            "value": 10554.0
+          },
+          {
+            "name": "Waste water management",
+            "value": 5178.0
+          },
+          {
+            "name": "Pollution abatement",
+            "value": 1473.0
+          },
+          {
+            "name": "Protection of biodiversity and landscape",
+            "value": 2270.0
+          },
+          {
+            "name": "RandD Environmental protection",
+            "value": 508.0
+          },
+          {
+            "name": "Environmental protection n.e.c.",
+            "value": 4280.0
+          }
+        ]
+      },
+      {
+        "name": "Housing and community amenities",
+        "children": [
+          {
+            "name": "Housing development",
+            "value": 9695.0
+          },
+          {
+            "name": "Community development",
+            "value": 14720.0
+          },
+          {
+            "name": "Water supply",
+            "value": 8116.0
+          },
+          {
+            "name": "Street lighting",
+            "value": 0.0
+          },
+          {
+            "name": "RandD Housing and community amenities",
+            "value": 2168.0
+          },
+          {
+            "name": "Housing and community amenities n.e.c.",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Health",
+        "children": [
+          {
+            "name": "Medical products, appliances and equipment",
+            "value": 36222.0
+          },
+          {
+            "name": "Outpatient services",
+            "value": 149107.0
+          },
+          {
+            "name": "Hospital services",
+            "value": 122299.0
+          },
+          {
+            "name": "Public health services",
+            "value": 10943.0
+          },
+          {
+            "name": "RandD Health",
+            "value": 9990.0
+          },
+          {
+            "name": "Health n.e.c.",
+            "value": 9470.0
+          }
+        ]
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "children": [
+          {
+            "name": "Recreational and sporting services",
+            "value": 26989.0
+          },
+          {
+            "name": "Cultural services",
+            "value": 24399.0
+          },
+          {
+            "name": "Broadcasting and publishing services",
+            "value": 9752.0
+          },
+          {
+            "name": "Religious and other community services",
+            "value": 97.0
+          },
+          {
+            "name": "RandD Recreation, culture and religion",
+            "value": 307.0
+          },
+          {
+            "name": "Recreation, culture and religion n.e.c.",
+            "value": 259.0
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Pre-primary and primary education",
+            "value": 211799.0
+          },
+          {
+            "name": "Secondary education",
+            "value": 52280.0
+          },
+          {
+            "name": "Post-secondary non-tertiary education",
+            "value": 810.0
+          },
+          {
+            "name": "Tertiary education",
+            "value": 52371.0
+          },
+          {
+            "name": "Education not definable by level",
+            "value": 9738.0
+          },
+          {
+            "name": "Subsidiary services to education",
+            "value": 1006.0
+          },
+          {
+            "name": "RandD Education",
+            "value": 143.0
+          },
+          {
+            "name": "Education n.e.c.",
+            "value": 4725.0
+          }
+        ]
+      },
+      {
+        "name": "Social protection",
+        "children": [
+          {
+            "name": "Sickness and disability",
+            "value": 179153.0
+          },
+          {
+            "name": "Survivors",
+            "value": 10988.0
+          },
+          {
+            "name": "Family and children",
+            "value": 120887.0
+          },
+          {
+            "name": "Unemployment",
+            "value": 57806.0
+          },
+          {
+            "name": "Housing",
+            "value": 13713.0
+          },
+          {
+            "name": "Social exclusion n.e.c.",
+            "value": 54581.0
+          },
+          {
+            "name": "RandD Social protection",
+            "value": 141.0
+          },
+          {
+            "name": "Social protection n.e.c.",
+            "value": 553.0
+          },
+          {
+            "name": "Old age",
+            "value": 506705.0
           }
         ]
       }
