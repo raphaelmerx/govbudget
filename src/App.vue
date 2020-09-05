@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-12">
         <h1>
-          View public finances for
+          Visualize public spending for
           <CountrySelector />
           in
           <TypeSelector />
