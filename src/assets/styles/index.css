@@ -34,3 +34,27 @@
 #measurement-canvas-wrapper {
     display: none;
 }
+
+/* transitions */
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+.cell-list-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.cell-list-enter-active {
+    transition: all 1s;
+}
+
+.cell-list-enter, .cell-list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}

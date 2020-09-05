@@ -2,7 +2,9 @@
     <div class="sidebar-item">
       <div class="dot-content">
         <div class="main-dot"></div>
-        <div v-if="this.hasNext" class="dot-trail"><div class="small-dot"></div><div class="small-dot"></div><div class="small-dot"></div><div class="small-dot"></div><div class="small-dot"></div><div class="small-dot"></div></div>
+        <transition name="fade">
+          <div v-if="this.hasNext" class="dot-trail"><div class="small-dot"></div><div class="small-dot"></div><div class="small-dot"></div><div class="small-dot"></div><div class="small-dot"></div><div class="small-dot"></div></div>
+        </transition>
       </div>
       <div class="item-content">
         <div class="label">

@@ -1,6 +1,7 @@
 <template>
   <g
     class="explorer-cell"
+    v-bind:class="{ 'has-children': cell.data.children }"
     :transform="position"
     v-tooltip="{
         content: cell.fullTitle + ': ' + cell.subtitle.text,
@@ -84,7 +85,10 @@ export default {
 
 <style scoped>
 .explorer-cell {
-  cursor: pointer;
+  cursor: zoom-out;
+}
+.explorer-cell.has-children {
+  cursor: zoom-in;
 }
 
 .explorer-cell-subtitle {
