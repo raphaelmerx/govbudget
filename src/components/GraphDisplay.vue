@@ -16,26 +16,14 @@
 <script>
 /* eslint-disable no-unreachable */
 import axios from "axios";
-import * as d3 from 'd3';
 import { hierarchy, treemap, treemapBinary } from 'd3-hierarchy';
 import { scaleLinear } from 'd3-scale';
-import { formatLocale } from 'd3-format';
 import { measureText } from '../helpers/measureText';
+import { formatCurrency } from '../helpers/formatCurrency';
 
 import TreeCell from './TreeCell.vue'
 import SidebarItem from './SidebarItem.vue'
 
-
-const customD3Locale = formatLocale({ currency: ["€", ""]})
-
-function formatCurrency() {
-  let function_ret = customD3Locale.format.apply(d3, arguments);
-  return (function(args) {
-    return function() {
-      return args.apply(d3, arguments).replace(/G/, "B");
-    };
-  })(function_ret);
-}
 
 export default {
   name: "GraphDisplay",
