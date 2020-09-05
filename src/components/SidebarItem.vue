@@ -53,6 +53,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   margin-left: 1rem;
+  text-align: left;
 }
 
 .sidebar-item .label {

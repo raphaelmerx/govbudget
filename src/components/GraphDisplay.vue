@@ -4,14 +4,17 @@
     <SidebarItem :label="this.country + ' GDP'" :value="this.formattedGDP" :has-next="true" />
     <SidebarItem :label="'Public spending'" :value="this.formattedTotalSpend" :has-next="this.zoom" />
     <transition name="fade">
-    <SidebarItem v-if="this.zoom" :label="this.zoom" :value="this.formattedCategorySpend" :has-next="false" />
+      <SidebarItem v-if="this.zoom" :label="this.zoom" :value="this.formattedCategorySpend" :has-next="false" />
     </transition>
   </div>
   <div id="graph-container">
-    <svg class="treemap" width="100%" height="500">
-      <transition-group name="cell-list" tag="g">
-      <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
+    <svg class="treemap" v-if="this.isChrome" width="100%" height="500">
+      <transition-group name="cell-list" tag="svg">
+        <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
       </transition-group>
+    </svg>
+    <svg class="treemap" v-if="!this.isChrome" width="100%" height="500">
+      <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
     </svg>
   </div>
 </div>
@@ -49,6 +52,7 @@ export default {
       categorySpend: 0,
       zoom: '',
       cells: [],
+      isChrome: !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime),
     };
   },
   mounted() {
