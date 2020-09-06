@@ -1,6 +1,7 @@
 <template>
   <select @change="handleTypeChange">
-    <option value="percentTotalSpend" selected>% of Government spending</option>
+    <option value="" disabled selected>breakdown type</option>
+    <option value="percentTotalSpend">% of Government spending</option>
     <option value="percentGDP">% of GDP</option>
     <option value="nominal">currency</option>
     <option value="nominal-per-capita">currency per capita</option>

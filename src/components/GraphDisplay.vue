@@ -1,13 +1,13 @@
 <template>
-<div id="main-container">
-  <div id="sidebar-container">
-    <SidebarItem :label="this.country + ' GDP'" :value="this.formattedGDP" :has-next="true" />
-    <SidebarItem :label="'Public spending'" :value="this.formattedTotalSpend" :has-next="this.zoom" />
-    <transition name="fade">
-      <SidebarItem v-if="this.zoom" :label="this.zoom" :value="this.formattedCategorySpend" :has-next="false" />
-    </transition>
+<div id="graph-container">
+  <div id="sidebar-container" v-show="country">
+      <SidebarItem :label="this.country + ' GDP'" :value="this.formattedGDP" :has-next="true" />
+      <SidebarItem :label="'Public spending'" :value="this.formattedTotalSpend" :has-next="this.zoom" />
+      <transition name="fade">
+        <SidebarItem v-if="this.zoom" :label="this.zoom" :value="this.formattedCategorySpend" :has-next="false" />
+      </transition>
   </div>
-  <div id="graph-container">
+  <div id="treemap-container">
     <svg class="treemap" v-if="this.isChrome" width="100%" height="500">
       <transition-group name="cell-list" tag="svg">
         <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
@@ -21,7 +21,6 @@
 </template>
 
 <script>
-/* eslint-disable no-unreachable */
 import axios from "axios";
 import { hierarchy, treemap, treemapBinary } from 'd3-hierarchy';
 import { scaleLinear } from 'd3-scale';
@@ -46,8 +45,8 @@ export default {
       GDPs: {'Australia': 1947246.0, 'Austria': 385711.94, 'Belgium': 459531.6, 'Czech Republic': 5408766.0, 'Denmark': 2245954.115, 'Estonia': 26035.854, 'Finland': 233662.0, 'France': 2360687.0, 'Germany': 3344370.0, 'Greece': 184713.6072, 'Hungary': 42661805.0, 'Iceland': 2787386.0031, 'Ireland': 324038.1891, 'Italy': 1766168.2, 'Japan': 547125500.0, 'Latvia': 29056.05, 'Lithuania': 45264.3769, 'Netherlands': 773987.0, 'Norway': 3530860.0, 'Poland': 2120480.0, 'Portugal': 204304.761, 'Slovak Republic': 89605.907, 'Slovenia': 45754.8179, 'Spain': 1202193.0, 'Sweden': 4828306.0, 'Switzerland': 689545.26, 'United Kingdom': 2144304.0},
       population: {"Australia": 24992860, "Austria": 8837707, "Belgium": 11403740, "Canada": 37058856, "Chile": 18751405, "Colombia": 49834240, "Czech Republic": 10626430, "Denmark": 5789957, "Estonia": 1321977, "Finland": 5515525, "France": 66941698, "Germany": 82914191, "Greece": 10725886, "Hungary": 9767600, "Iceland": 352722, "Ireland": 4857015, "Israel": 8872943, "Italy": 60421797, "Japan": 126443180, "Korea": 51635256, "Latvia": 1927170, "Lithuania": 2801541, "Luxembourg": 607950, "Mexico": 125327797, "Netherlands": 17231622, "New Zealand": 4885500, "Norway": 5311916, "Poland": 38413139, "Portugal": 10283822, "Slovak Republic": 5446771, "Slovenia": 2070050, "Spain": 46733038, "Sweden": 10175214, "Switzerland": 8513227, "Turkey": 81407211, "United Kingdom": 66435550, "United States": 327167434,},
       currency: {'Australia': 'A$', 'Czech Republic': 'CZK', 'Denmark': 'DKK', 'Hungary': 'HUF', 'Iceland': 'ISK', 'Japan': '¥', 'Norway': 'NOK', 'Poland': 'PLN', 'Sweden': 'SEK', 'Switzerland': 'CHF', 'United Kingdom': '£'},
-      country: "Australia",
-      type: "percentTotalSpend",
+      country: "",
+      type: "",
       totalSpend: 0,
       categorySpend: 0,
       zoom: '',
@@ -159,8 +158,10 @@ export default {
       return graphData;
     },
     renderGraph() {
+      if (!this.country || !this.type) return;
       var graphData = this.getFormattedGraphData(this.country, this.type);
       this.buildVirtualChart(graphData);
+      document.querySelector("h1").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     },
 
     truncateText(text, maxWidth) {
@@ -241,7 +242,7 @@ export default {
             .sum(d => d.value)
             .sort((a, b) => b.value - a.value)
 
-      const availableWidth = document.querySelector('#graph-container').offsetWidth;
+      const availableWidth = document.querySelector('#treemap-container').offsetWidth;
 
       const tree = treemap()
           .size([availableWidth, 500])
@@ -277,7 +278,7 @@ export default {
 </script>
 
 <style scoped>
-#main-container {
+#graph-container {
   display: flex;
   flex-direction: row;
 }
@@ -297,7 +298,7 @@ export default {
   padding-top: 2rem;
 }
 
-#graph-container {
+#treemap-container {
   flex-grow: 9;
 }
 

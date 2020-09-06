@@ -1,5 +1,6 @@
 <template>
   <select @change="handleCountryChange">
+    <option value="" disabled selected>country</option>
     <option value="Australia">Australia</option>
     <option value="Austria">Austria</option>
     <option value="Belgium">Belgium</option>

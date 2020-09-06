@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1>
-          Visualize public spending for
-          <CountrySelector />
-          in
-          <TypeSelector />
-        </h1>
-      </div>
+    <div id="logo-container">
+      <img id="logo" :src="`${publicPath}openbudget-logo.png`">
+    </div>
+    <div id="main-container">
+      <h1>
+        Visualize public spending for
+        <CountrySelector />
+        in
+        <TypeSelector />
+      </h1>
       <GraphDisplay />
       <p>
         <em>
@@ -33,6 +34,11 @@ export default {
     CountrySelector,
     GraphDisplay,
     TypeSelector
+  },
+  data: function() {
+    return {
+      publicPath: process.env.BASE_URL,
+    }
   }
 };
 </script>
@@ -44,11 +50,24 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-h1 {
-  margin-bottom: 4rem;
+
+#logo-container {
+  text-align: left;
 }
+
+
+#logo {
+  height: 100px;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30vh;
+}
+
 h3 {
   margin: 40px 0 0;
 }
