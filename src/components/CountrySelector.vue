@@ -14,6 +14,7 @@
     <option value="Hungary">Hungary</option>
     <option value="Iceland">Iceland</option>
     <option value="Ireland">Ireland</option>
+    <option value="Israel">Israel</option>
     <option value="Italy">Italy</option>
     <option value="Japan">Japan</option>
     <option value="Latvia">Latvia</option>
@@ -28,6 +29,7 @@
     <option value="Sweden">Sweden</option>
     <option value="Switzerland">Switzerland</option>
     <option value="United Kingdom">United Kingdom</option>
+    <option value="United States">United States</option>
   </select>
 </template>
 

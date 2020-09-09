@@ -42,9 +42,9 @@ export default {
     return {
       publicPath: process.env.BASE_URL,
       govspend: null,
-      GDPs: {'Australia': 1947246.0, 'Austria': 385711.94, 'Belgium': 459531.6, 'Czech Republic': 5408766.0, 'Denmark': 2245954.115, 'Estonia': 26035.854, 'Finland': 233662.0, 'France': 2360687.0, 'Germany': 3344370.0, 'Greece': 184713.6072, 'Hungary': 42661805.0, 'Iceland': 2787386.0031, 'Ireland': 324038.1891, 'Italy': 1766168.2, 'Japan': 547125500.0, 'Latvia': 29056.05, 'Lithuania': 45264.3769, 'Netherlands': 773987.0, 'Norway': 3530860.0, 'Poland': 2120480.0, 'Portugal': 204304.761, 'Slovak Republic': 89605.907, 'Slovenia': 45754.8179, 'Spain': 1202193.0, 'Sweden': 4828306.0, 'Switzerland': 689545.26, 'United Kingdom': 2144304.0},
+      GDPs: {'Australia': 1947246.0, 'Austria': 385711.94, 'Belgium': 459531.6, 'Czech Republic': 5408766.0, 'Denmark': 2245954.115, 'Estonia': 26035.854, 'Finland': 233662.0, 'France': 2360687.0, 'Germany': 3344370.0, 'Greece': 184713.6072, 'Hungary': 42661805.0, 'Iceland': 2787386.0031, 'Ireland': 324038.1891, 'Israel': 1330617.6731, 'Italy': 1766168.2, 'Japan': 547125500.0, 'Latvia': 29056.05, 'Lithuania': 45264.3769, 'Netherlands': 773987.0, 'Norway': 3530860.0, 'Poland': 2120480.0, 'Portugal': 204304.761, 'Slovak Republic': 89605.907, 'Slovenia': 45754.8179, 'Spain': 1202193.0, 'Sweden': 4828306.0, 'Switzerland': 689545.26, 'United Kingdom': 2144304.0, 'United States': 20580159.8},
       population: {"Australia": 24992860, "Austria": 8837707, "Belgium": 11403740, "Canada": 37058856, "Chile": 18751405, "Colombia": 49834240, "Czech Republic": 10626430, "Denmark": 5789957, "Estonia": 1321977, "Finland": 5515525, "France": 66941698, "Germany": 82914191, "Greece": 10725886, "Hungary": 9767600, "Iceland": 352722, "Ireland": 4857015, "Israel": 8872943, "Italy": 60421797, "Japan": 126443180, "Korea": 51635256, "Latvia": 1927170, "Lithuania": 2801541, "Luxembourg": 607950, "Mexico": 125327797, "Netherlands": 17231622, "New Zealand": 4885500, "Norway": 5311916, "Poland": 38413139, "Portugal": 10283822, "Slovak Republic": 5446771, "Slovenia": 2070050, "Spain": 46733038, "Sweden": 10175214, "Switzerland": 8513227, "Turkey": 81407211, "United Kingdom": 66435550, "United States": 327167434,},
-      currency: {'Australia': 'A$', 'Czech Republic': 'CZK', 'Denmark': 'DKK', 'Hungary': 'HUF', 'Iceland': 'ISK', 'Japan': '¥', 'Norway': 'NOK', 'Poland': 'PLN', 'Sweden': 'SEK', 'Switzerland': 'CHF', 'United Kingdom': '£'},
+      currency: {'Australia': 'A$', 'Czech Republic': 'CZK', 'Denmark': 'DKK', 'Hungary': 'HUF', 'Iceland': 'ISK', 'Israel': 'ILS', 'Japan': '¥', 'Norway': 'NOK', 'Poland': 'PLN', 'Sweden': 'SEK', 'Switzerland': 'CHF', 'United Kingdom': '£', 'United States': '$'},
       country: "",
       type: "",
       totalSpend: 0,
@@ -106,9 +106,12 @@ export default {
     getTotalSpend: function(graphData) {
         let totalSpend = 0;
         graphData.children.forEach(headCategory => {
-          headCategory.children.forEach(category => {
-            totalSpend += category.value;
-          });
+          if (headCategory.children) {
+            headCategory.children.forEach(category => { totalSpend += category.value; });
+          } else {
+            // some countries like the US only have one category
+            totalSpend += headCategory.value;
+          }
         });
         return totalSpend;
     },
@@ -121,37 +124,33 @@ export default {
     getFormattedGraphData: function(country, type) {
       // clone object
       let graphData = JSON.parse(JSON.stringify(this.govspend[country]));
+      let computeValue;
 
       this.totalSpend = this.getTotalSpend(graphData);
-      if (this.zoom) {
-        this.categorySpend = this.getCategorySpend(graphData, this.zoom);
-      }
+
+      if (this.zoom) this.categorySpend = this.getCategorySpend(graphData, this.zoom);
 
       if (type === "nominal") {
-        graphData.children.forEach(headCategory => {
-          headCategory.children.forEach(category => {
-            category.value = category.value * 1000000;
-          });
-        });
+        computeValue = (value) => value * 1000000;
       } else if (type === "nominal-per-capita") {
-        graphData.children.forEach(headCategory => {
-          headCategory.children.forEach(category => {
-            category.value = category.value * 1000000 / this.population[country];
-          });
-        });
+        computeValue = (value) => value * 1000000 / this.population[country];
       } else if (type === "percentGDP") {
-        graphData.children.forEach(headCategory => {
-          headCategory.children.forEach(category => {
-            category.value = (category.value / this.GDPs[country]) * 100;
-          });
-        });
+        computeValue = (value) => (value / this.GDPs[country]) * 100;
       } else if (type === "percentTotalSpend") {
-        graphData.children.forEach(headCategory => {
-          headCategory.children.forEach(category => {
-            category.value = (category.value / this.totalSpend) * 100;
-          });
-        });
+        computeValue = (value) => (value / this.totalSpend) * 100;
       }
+
+      // apply computeValue to leaves
+      graphData.children.forEach(headCategory => {
+        if (headCategory.children) {
+          headCategory.children.forEach(category => {
+            category.value = computeValue(category.value);
+          });
+        } else {
+          headCategory.value = computeValue(headCategory.value)
+        }
+      });
+
       if (this.zoom) {
         graphData = graphData.children.find((c) => c.name === this.zoom);
       }

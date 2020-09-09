@@ -8935,5 +8935,95 @@
         ]
       }
     ]
+  },
+  "United States": {
+    "name": "United States",
+    "children": [
+      {
+        "name": "General public services",
+        "value": 1179026.1247
+      },
+      {
+        "name": "Defence",
+        "value": 661021.0916
+      },
+      {
+        "name": "Public order and safety",
+        "value": 409817.4386
+      },
+      {
+        "name": "Economic affairs",
+        "value": 690180.4415
+      },
+      {
+        "name": "Environment protection",
+        "value": 0.0
+      },
+      {
+        "name": "Housing and community amenities",
+        "value": 97691.6336
+      },
+      {
+        "name": "Health",
+        "value": 1915232.7416
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "value": 56964.5653
+      },
+      {
+        "name": "Education",
+        "value": 1223617.9246
+      },
+      {
+        "name": "Social protection",
+        "value": 1551962.0619
+      }
+    ]
+  },
+  "Israel": {
+    "name": "Israel",
+    "children": [
+      {
+        "name": "General public services",
+        "value": 59484.1
+      },
+      {
+        "name": "Defence",
+        "value": 73618.94
+      },
+      {
+        "name": "Public order and safety",
+        "value": 22229.16
+      },
+      {
+        "name": "Economic affairs",
+        "value": 35340.9
+      },
+      {
+        "name": "Environment protection",
+        "value": 7045.29
+      },
+      {
+        "name": "Housing and community amenities",
+        "value": 3450.27
+      },
+      {
+        "name": "Health",
+        "value": 72020.54
+      },
+      {
+        "name": "Recreation, culture and religion",
+        "value": 20139.81
+      },
+      {
+        "name": "Education",
+        "value": 94970.22
+      },
+      {
+        "name": "Social protection",
+        "value": 148212.95
+      }
+    ]
   }
 }

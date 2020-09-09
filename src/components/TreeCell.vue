@@ -1,7 +1,7 @@
 <template>
   <g
     class="explorer-cell"
-    v-bind:class="{ 'has-children': cell.data.children }"
+    v-bind:class="{ 'has-children': cell.data.children, 'no-zoom': !cell.data.children && !$parent.$parent.zoom}"
     :transform="position"
     v-tooltip="{
         content: cell.fullTitle + ': ' + cell.subtitle.text,
@@ -89,6 +89,9 @@ export default {
 }
 .explorer-cell.has-children {
   cursor: zoom-in;
+}
+.explorer-cell.no-zoom {
+  cursor: auto;
 }
 
 .explorer-cell-subtitle {
