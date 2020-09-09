@@ -8,12 +8,12 @@
       </transition>
   </div>
   <div id="treemap-container">
-    <svg class="treemap" v-if="this.isChrome" width="100%" height="500">
+    <svg class="treemap" v-if="this.isChrome" width="100%" height="70vh">
       <transition-group name="cell-list" tag="svg">
         <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
       </transition-group>
     </svg>
-    <svg class="treemap" v-if="!this.isChrome" width="100%" height="500">
+    <svg class="treemap" v-if="!this.isChrome" width="100%" height="70vh">
       <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
     </svg>
   </div>
@@ -245,7 +245,7 @@ export default {
       const availableWidth = document.querySelector('#treemap-container').offsetWidth;
 
       const tree = treemap()
-          .size([availableWidth, 500])
+          .size([availableWidth, window.innerHeight * 0.70])
           .tile(treemapBinary)
           .paddingInner(5)
           .round(true);
