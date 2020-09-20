@@ -16,7 +16,8 @@
     "d3-interpolate": "^2.0.1",
     "d3-scale": "^3.2.2",
     "v-tooltip": "^2.0.3",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.4.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
