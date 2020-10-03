@@ -3,8 +3,8 @@
     <option value="" disabled selected>breakdown type</option>
     <option value="percentTotalSpend">% of Government spending</option>
     <option value="percentGDP">% of GDP</option>
-    <option value="nominal">currency</option>
-    <option value="nominal-per-capita">currency per capita</option>
+    <option value="nominal">total amount</option>
+    <option value="nominal-per-capita">amount per capita</option>
   </select>
 </template>
 
