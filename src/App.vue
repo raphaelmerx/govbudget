@@ -51,6 +51,13 @@ export default {
   height: 100px;
 }
 
+@media (max-width: 480px) {
+  #logo {
+    max-width: 35%;
+    height: auto;
+  }
+}
+
 .nav-links {
   display: flex;
   font-weight: 500;
