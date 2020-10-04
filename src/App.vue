@@ -76,13 +76,6 @@ export default {
   border-bottom: 2px solid #46bd87;
 }
 
-#main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 30vh;
-}
-
 h3 {
   margin: 40px 0 0;
 }
@@ -202,5 +195,10 @@ a {
   visibility: visible;
   opacity: 1;
   transition: opacity .15s;
+}
+
+.nav-item a:hover {
+  text-decoration: none;
+  color: #46bd87;
 }
 </style>

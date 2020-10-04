@@ -1,9 +1,9 @@
 <template>
   <div id="main-container">
-    <h1>
+    <h1 id="header-main">
       Visualize public spending for
       <CountrySelector />
-      in
+      represented as
       <TypeSelector />
     </h1>
     <GraphDisplay />
@@ -36,4 +36,11 @@ export default {
 </script>
 
 <style scoped>
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30vh;
+}
+
 </style>
