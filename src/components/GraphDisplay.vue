@@ -10,11 +10,11 @@
   <div id="treemap-container">
     <svg class="treemap" v-if="this.isChrome" width="100%" height="70vh">
       <transition-group name="cell-list" tag="svg">
-        <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
+        <TreeCell v-for="cell in cells" :key="cell.data.name" :cell="cell"/>
       </transition-group>
     </svg>
     <svg class="treemap" v-if="!this.isChrome" width="100%" height="70vh">
-      <TreeCell v-for="cell in cells" :key="cell.title.text" :cell="cell"/>
+      <TreeCell v-for="cell in cells" :key="cell.data.name" :cell="cell"/>
     </svg>
   </div>
 </div>
