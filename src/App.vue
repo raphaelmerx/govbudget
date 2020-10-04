@@ -2,38 +2,26 @@
   <div id="app">
     <div id="logo-container">
       <img id="logo" :src="`${publicPath}openbudget-logo.png`">
+      <nav class="nav-links">
+        <div class="nav-item">
+          <router-link to="/">Home</router-link>
+        </div>
+        <div class="nav-item">
+          <router-link to="/about">About</router-link>
+        </div>
+      </nav>
     </div>
-    <div id="main-container">
-      <h1>
-        Visualize public spending for
-        <CountrySelector />
-        in
-        <TypeSelector />
-      </h1>
-      <GraphDisplay />
-      <p>
-        <em>
-          Data is for year 2018. Source:
-          <a href="https://stats.oecd.org" target="_blank">stats.oecd.org</a>
-        </em>
-      </p>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import CountrySelector from "./components/CountrySelector.vue";
-import GraphDisplay from "./components/GraphDisplay.vue";
-import TypeSelector from "./components/TypeSelector.vue";
 
 import './assets/styles/index.css';
 
 export default {
   name: "App",
   components: {
-    CountrySelector,
-    GraphDisplay,
-    TypeSelector
   },
   data: function() {
     return {
@@ -54,18 +42,38 @@ export default {
 
 #logo-container {
   text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-
 
 #logo {
   height: 100px;
 }
 
-#main-container {
+@media (max-width: 480px) {
+  #logo {
+    max-width: 35%;
+    height: auto;
+  }
+}
+
+.nav-links {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 30vh;
+  font-weight: 500;
+}
+
+.nav-links a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.nav-item {
+  margin: 1rem 2rem;
+}
+
+.nav-item .router-link-exact-active {
+  border-bottom: 2px solid #46bd87;
 }
 
 h3 {
@@ -187,5 +195,10 @@ a {
   visibility: visible;
   opacity: 1;
   transition: opacity .15s;
+}
+
+.nav-item a:hover {
+  text-decoration: none;
+  color: #46bd87;
 }
 </style>

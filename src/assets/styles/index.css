@@ -1,11 +1,13 @@
 
-h1 {
-  margin-bottom: 4rem;
+#header-main {
+    font-size: 2em;
+    margin-bottom: 4rem;
 }
 @media (max-width: 480px) {
-  h1 {
+  #header-main {
     font-size: 1.5rem;
     margin-bottom: 2rem;
+    line-height: 1.75;
   }
 }
 
