@@ -45,16 +45,13 @@
         I have a suggestion for OpenBudget...
       </h5>
       <p>
-        Please get in touch! Use this form to contact me:
-        <b-form name="contact" id="contact-form" netlify>
-          <b-form-group id="input-group-1" label-for="input-1" >
-            <b-form-input type="email" required placeholder="Your email"></b-form-input>
-          </b-form-group>
-          <b-form-group id="input-group-1" label-for="input-1" >
-            <b-form-textarea required placeholder="Comments" rows="5"></b-form-textarea>
-          </b-form-group>
-          <b-button type="submit" variant="primary">Send</b-button>
-        </b-form>
+        Would love to hear it, please email me at 
+        <a href="#" class="cryptedmail"
+          data-name="raphael.merx"
+          data-domain="gmail"
+          data-tld="com"
+          onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"></a>
+        .
       </p>
   </b-container>
 </template>
@@ -79,5 +76,8 @@ export default {
 }
 #contact-form {
   max-width: 500px;
+}
+.cryptedmail:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
 }
 </style>
