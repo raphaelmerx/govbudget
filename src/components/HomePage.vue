@@ -42,5 +42,10 @@ export default {
   justify-content: center;
   padding-top: 30vh;
 }
+@media (max-width: 480px) {
+  #main-container {
+    padding-top: 0;
+  }
+}
 
 </style>
