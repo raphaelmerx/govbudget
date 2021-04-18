@@ -1,26 +1,23 @@
 # Comparison of public spending across countries
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e692544b-d598-4ed2-8434-f49ce45e73af/deploy-status)](https://app.netlify.com/sites/hopeful-lovelace-c4d0fd/deploys)
+Deployed at https://open-budget.org/ using [![Netlify Status](https://api.netlify.com/api/v1/badges/e692544b-d598-4ed2-8434-f49ce45e73af/deploy-status)](https://app.netlify.com/sites/budget-compare/deploys)
 
-## Project setup
+### Project setup
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+yarn
 ```
 
-### Compiles and minifies for production
+### Compile and hot-reload for development
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+yarn serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Compile and minify for production
+```
+yarn build
+```
+
+### Lint and fix files
+```
+yarn lint
+```
