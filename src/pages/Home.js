@@ -21,7 +21,7 @@ function Home() {
       <GraphDisplay />
       <p>
         <em>
-          Data is for year 2018. Source: <a href="https://stats.oecd.org" target="_blank">stats.oecd.org</a>
+          Data is for year 2018. Source: <a href="https://stats.oecd.org" target="_blank" rel="noreferrer noopener">stats.oecd.org</a>
         </em>
       </p>
     </div>

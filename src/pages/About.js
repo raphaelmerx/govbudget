@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
 import './About.css'
 import Container from '@material-ui/core/Container';
 
@@ -37,12 +39,12 @@ function About() {
         What are some other resources to find comparisons of public spending?
       </h3>
       <ul>
-        <li>- <b>OurWorldInData</b> compiled an <a href="https://ourworldindata.org/government-spending" target="_blank" rel="noopener">excellent article on Government spending</a></li>
-        <li>- The <b>OECD</b> statistics website contains <a href="https://stats.oecd.org/Index.aspx?datasetcode=SNA_TABLE11_ARCHIVE" target="_blank" rel="noopener">spending tables</a> for several (OECD and non-OECD) countries.</li>
+        <li>- <b>OurWorldInData</b> compiled an <a href="https://ourworldindata.org/government-spending" target="_blank" rel="noreferrer noopener">excellent article on Government spending</a></li>
+        <li>- The <b>OECD</b> statistics website contains <a href="https://stats.oecd.org/Index.aspx?datasetcode=SNA_TABLE11_ARCHIVE" target="_blank" rel="noreferrer noopener">spending tables</a> for several (OECD and non-OECD) countries.</li>
         <li>- <b>Wikipedia</b> has entries for comparing{' '}
-          <a href="https://en.wikipedia.org/wiki/List_of_countries_by_government_spending_as_percentage_of_GDP" target="_blank" rel="noopener">Government spending</a>,
-          <a href="https://en.wikipedia.org/wiki/List_of_countries_by_spending_on_education_(%25_of_GDP)" target="_blank" rel="noopener">education spending</a>, 
-          and <a href="https://en.wikipedia.org/wiki/List_of_countries_by_social_welfare_spending" target="_blank" rel="noopener">welfare spending</a> by country.
+          <a href="https://en.wikipedia.org/wiki/List_of_countries_by_government_spending_as_percentage_of_GDP" target="_blank" rel="noreferrer noopener">Government spending</a>,
+          <a href="https://en.wikipedia.org/wiki/List_of_countries_by_spending_on_education_(%25_of_GDP)" target="_blank" rel="noreferrer noopener">education spending</a>, 
+          and <a href="https://en.wikipedia.org/wiki/List_of_countries_by_social_welfare_spending" target="_blank" rel="noreferrer noopener">welfare spending</a> by country.
         </li>
       </ul>
       <h3 class="question">

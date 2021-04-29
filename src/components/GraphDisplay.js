@@ -26,6 +26,7 @@ function GraphDisplay() {
   const [cells, setCells] = useState([])
   useEffect(() => {
     setCells(buildVirtualChart(graphData, valueFormatter))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCountry, selectedType, selectedCategory])
 
   return (
