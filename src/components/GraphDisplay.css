@@ -1,0 +1,23 @@
+#graph-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 480px) {
+  #sidebar-container {
+    display: none;
+  }
+}
+
+#sidebar-container {
+  min-width: 250px;
+  flex-grow: 1;
+  background-color: rgb(50, 58, 69);
+  color: white;
+  margin-right: 2rem;
+  padding-top: 2rem;
+}
+
+#treemap-container {
+  flex-grow: 9;
+}

@@ -1,0 +1,77 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#logo-container {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#logo {
+  height: 100px;
+}
+
+@media (max-width: 480px) {
+  #logo {
+    max-width: 35%;
+    height: auto;
+  }
+}
+
+.nav-links {
+  display: flex;
+  font-weight: 500;
+}
+
+.nav-links a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.nav-item {
+  margin: 1rem 2rem;
+}
+
+.nav-item .active {
+  border-bottom: 2px solid #46bd87;
+}
+
+.nav-item a:hover {
+  text-decoration: none;
+  color: #46bd87;
+}
+
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+
+h1 select {
+  font-size: 0.8em;
+  border: 1px solid #5e5e5e;
+  border-radius: 10px;
+  padding: 0.2rem;
+  background-color: white;
+  outline: none;
+  margin: 0 1rem;
+}
+
+.hidden {
+  display: none;
+}

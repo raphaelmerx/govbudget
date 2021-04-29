@@ -1,0 +1,10 @@
+#about-container {
+  margin-top: 3rem;
+  text-align: left;
+}
+#contact-form {
+  max-width: 500px;
+}
+.cryptedmail:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
+}
