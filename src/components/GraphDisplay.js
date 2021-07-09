@@ -21,7 +21,7 @@ function GraphDisplay() {
 
   const valueFormatter = getValueFormatter(selectedType, countryInfo.currency)
 
-  const graphData = getFormattedGraphData(countryInfo, selectedType, selectedCategory)
+  const graphData = getFormattedGraphData(countryInfo.key, selectedType, selectedCategory)
 
   const [cells, setCells] = useState([])
   useEffect(() => {

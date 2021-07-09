@@ -7,10 +7,10 @@ export const getcountryInfo = (key, options) => {
 }
 
 export const countrySlice = createSlice({
-  name: 'country',
+  name: 'country2',
   initialState: {
-    value: "Australia",
-    options: countries
+    value: "France",
+    options: countries,
   },
   reducers: {
     selectOption: (state, action) => {
