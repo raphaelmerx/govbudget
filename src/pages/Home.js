@@ -4,19 +4,13 @@ import GraphDisplay from "../components/GraphDisplay";
 
 function Home() {
 
-  const handleCountryChange = (event) => {
-    console.log(event.target.value)
-  }
-  const handleTypeChange = (event) => {
-    console.log(event.target.value)
-  }
   return (
     <div id="main-container">
       <h1 id="header-main">
         Visualize public spending for
-        <CountrySelector handleCountryChange={handleCountryChange} />
+        <CountrySelector />
         represented as
-        <TypeSelector handleTypeChange={handleTypeChange} />
+        <TypeSelector />
       </h1>
       <GraphDisplay />
       <p>
