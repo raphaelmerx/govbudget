@@ -19,7 +19,7 @@ function App() {
           <img id="logo" src={logo} alt="logo"/>
           <nav className="nav-links">
             <div className="nav-item">
-              <NavLink to="/" exact>Home</NavLink>
+              <NavLink to="/" exact>Visualise</NavLink>
             </div>
             <div className="nav-item">
               <NavLink to="/about">About</NavLink>
