@@ -42,7 +42,7 @@ export default function TableComparison() {
   ]
 
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%', minWidth: '900px' }}>
       <DataGrid
         rows={tableRows}
         columns={columns}

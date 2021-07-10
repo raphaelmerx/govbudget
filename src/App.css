@@ -38,6 +38,12 @@
   margin: 1rem 2rem;
 }
 
+@media (max-width: 480px) {
+  .nav-item {
+    margin: 1rem 0.5rem;
+  }
+}
+
 .nav-item .active {
   border-bottom: 2px solid #46bd87;
 }
