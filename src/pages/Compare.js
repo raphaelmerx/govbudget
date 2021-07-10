@@ -8,7 +8,7 @@ function Compare() {
   return (
     <Container id="about-container">
       <h1 id="header-main">
-        Compare
+        Compare public spending in
         <CountrySelector />
         with
         <CountrySelector useCountry2="true" />
