@@ -1,17 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { format } from 'd3-format';
 
-import { makeStyles } from '@material-ui/core/styles';
 import { DataGrid } from '@material-ui/data-grid';
 
-import {getCategories, getCategorySpendUSD, getFormattedGraphData} from '../helpers/financials'
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
+import {getFormattedGraphData} from '../helpers/financials'
 
 
 export default function TableComparison() {
@@ -28,6 +20,7 @@ export default function TableComparison() {
     const name = c.name;
     const rowValues = graphData.map(e => {
       const categoryTree = e.children.filter(c => c.name === name)[0];
+			if (categoryTree.value !== undefined) return categoryTree.value;
       return categoryTree.children.reduce((prev, current) => prev + current.value, 0)
     })
     return {
@@ -39,19 +32,14 @@ export default function TableComparison() {
       'gdp2': rowValues[3],
     }
   })
-  console.log(tableRows)
 
   const columns = [
     { field: 'name', headerName: 'Category', flex: 1 },
-    { field: 'cap1', headerName: `${selectedCountry1} / capita (USD)`, flex: 1 },
-    { field: 'cap2', headerName: `${selectedCountry2} / capita (USD)`, flex: 1 },
-    { field: 'gdp1', headerName: `${selectedCountry1} % GDP`, flex: 1 },
-    { field: 'gdp2', headerName: `${selectedCountry2} % GDP`, flex: 1 },
+    { field: 'cap1', headerName: `${selectedCountry1} / capita (USD)`, flex: 1, valueFormatter: (params) => params.value.toLocaleString()},
+    { field: 'cap2', headerName: `${selectedCountry2} / capita (USD)`, flex: 1, valueFormatter: (params) => params.value.toLocaleString() },
+    { field: 'gdp1', headerName: `${selectedCountry1} % GDP`, flex: 1, valueFormatter: (params) => params.value.toFixed(2) },
+    { field: 'gdp2', headerName: `${selectedCountry2} % GDP`, flex: 1, valueFormatter: (params) => params.value.toFixed(2)  },
   ]
-  columns.forEach((column) => {
-    column.valueFormatter = (params) => params.value.toLocaleString();
-  })
-  console.log(columns)
 
   return (
     <div style={{ width: '100%' }}>
