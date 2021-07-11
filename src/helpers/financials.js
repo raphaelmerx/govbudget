@@ -27,6 +27,7 @@ export const getCategorySpend = (country, category) => {
   const graphData = govspend[country]
   const categoryTree = graphData.children.find((c) => c.name === category);
   let totalSpend = 0;
+  if (categoryTree.value !== undefined) return categoryTree.value
   categoryTree.children.forEach(child => { totalSpend += child.value; });
   return totalSpend;
 }
