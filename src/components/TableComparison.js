@@ -30,6 +30,13 @@ const getTableRows = (country1, country2) => {
     return rowData
   })
 
+  // add a row for total amounts
+  const totalRow = tableRows.reduce((totalRow, currentRow) => {
+    ['per-capita-1', 'per-capita-2', 'gdp-1', 'gdp-2'].forEach((field) => totalRow[field] += currentRow[field])
+    return totalRow
+  }, {'id': 'Total', 'name': 'Total', 'per-capita-1': 0, 'per-capita-2': 0, 'gdp-1': 0, 'gdp-2': 0})
+  tableRows.push(totalRow)
+
   return tableRows
 }
 
@@ -38,16 +45,16 @@ export default function TableComparison() {
 
   const columns = [
     { field: 'name', headerName: 'Category', flex: 1 },
-    { field: 'per-capita-1', headerName: `${selectedCountry1} / capita (USD)`, flex: 1, valueFormatter: (params) => params.value.toLocaleString()},
-    { field: 'per-capita-2', headerName: `${selectedCountry2} / capita (USD)`, flex: 1, valueFormatter: (params) => params.value.toLocaleString() },
-    { field: 'gdp-1', headerName: `${selectedCountry1} % GDP`, flex: 1, valueFormatter: (params) => params.value.toFixed(2) },
-    { field: 'gdp-2', headerName: `${selectedCountry2} % GDP`, flex: 1, valueFormatter: (params) => params.value.toFixed(2)  },
+    { field: 'per-capita-1', headerName: `${selectedCountry1} / capita (USD)`, flex: 1, valueFormatter: (params) => '$' + params.value.toLocaleString()},
+    { field: 'per-capita-2', headerName: `${selectedCountry2} / capita (USD)`, flex: 1, valueFormatter: (params) => '$' + params.value.toLocaleString() },
+    { field: 'gdp-1', headerName: `${selectedCountry1} % GDP`, flex: 1, valueFormatter: (params) => params.value.toFixed(2) + '%' },
+    { field: 'gdp-2', headerName: `${selectedCountry2} % GDP`, flex: 1, valueFormatter: (params) => params.value.toFixed(2) + '%' },
   ]
 
   const tableRows = getTableRows(selectedCountry1, selectedCountry2)
 
   return (
-    <div style={{ width: '100%', minWidth: '900px' }}>
+    <div style={{ width: '100%', minWidth: '900px' }} class="table-container">
       <DataGrid
         rows={tableRows}
         columns={columns}
