@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import Home from './pages/Home';
+import Compare from './pages/Compare';
 import About from './pages/About';
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
               <NavLink to="/" exact>Visualise</NavLink>
             </div>
             <div className="nav-item">
+              <NavLink to="/compare" exact>Compare</NavLink>
+            </div>
+            <div className="nav-item">
               <NavLink to="/about">About</NavLink>
             </div>
           </nav>
@@ -32,6 +36,9 @@ function App() {
         <Switch>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/compare">
+            <Compare />
           </Route>
           <Route path="/">
             <Home />

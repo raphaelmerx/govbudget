@@ -1,5 +1,7 @@
 import { formatLocale } from 'd3-format';
 import govspend from '../app/govspend.json'
+import exchangerates from '../app/exchangerates.json'
+import countries from '../app/countries.json'
 
 export const formatCurrency = (currency, format) => {
   let formatter = formatLocale({ currency: [currency, ""]}).format(format)
@@ -32,9 +34,19 @@ export const getCategorySpend = (country, category) => {
   return totalSpend;
 }
 
+export const getCategorySpendUSD = (country, category) => {
+  const categorySpendLocal = getCategorySpend(country, category);
+  // get currency for country
+  const currency = countries.filter(c => c.key === country)[0].currency;
+  // get exchange rate with usd
+  const exchangerate = exchangerates.filter((e) => e.symbol === currency)[0].rate;
+  return categorySpendLocal / exchangerate;
+}
+
 export const getFormattedAmount = (amount, currency) => formatCurrency(currency + ' ', "$0.2s")(amount)
 
-export const getFormattedGraphData = (countryInfo, type, category) => {
+export const getFormattedGraphData = (countryName, type, category) => {
+  const countryInfo = countries.filter(c => c.key === countryName)[0]
   // clone object
   let graphData = JSON.parse(JSON.stringify(govspend[countryInfo.key]));
   let computeValue;
@@ -45,6 +57,9 @@ export const getFormattedGraphData = (countryInfo, type, category) => {
     computeValue = (value) => value * 1000000;
   } else if (type === "nominal-per-capita") {
     computeValue = (value) => value * 1000000 / countryInfo.population;
+  } else if (type === "nominal-per-capita-usd") {
+    const exchangerate = exchangerates.filter((e) => e.symbol === countryInfo.currency)[0].rate;
+    computeValue = (value) => Math.round(value * 1000000 / countryInfo.population / exchangerate);
   } else if (type === "percentGDP") {
     computeValue = (value) => (value / countryInfo.GDP) * 100;
   } else if (type === "percentTotalSpend") {
@@ -57,6 +72,7 @@ export const getFormattedGraphData = (countryInfo, type, category) => {
       headCategory.children.forEach(category => {
         category.value = computeValue(category.value);
       });
+      // headCategory.value = headCategory.children.reduce((prev, current) => prev + current.value, 0);
     } else {
       headCategory.value = computeValue(headCategory.value)
     }
@@ -76,4 +92,8 @@ export const getValueFormatter = (type, currency) => {
       return `${(Math.round(value * 10) / 10)}%`;
     }
   }
+}
+
+export const getCategories = (country) => {
+  return govspend[country].children.map(c => c.name);
 }

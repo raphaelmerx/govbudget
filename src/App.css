@@ -1,5 +1,5 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+#app, #app .MuiDataGrid-root {
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -36,6 +36,12 @@
 
 .nav-item {
   margin: 1rem 2rem;
+}
+
+@media (max-width: 480px) {
+  .nav-item {
+    margin: 1rem 0.5rem;
+  }
 }
 
 .nav-item .active {
@@ -75,3 +81,23 @@ h1 select {
 .hidden {
   display: none;
 }
+
+/* Compare table */
+
+.MuiDataGrid-row.Mui-odd {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-id="Total"] {
+  font-weight: 600;
+}
+
+.table-container .MuiDataGrid-root .MuiDataGrid-columnHeader:focus, .table-container .MuiDataGrid-root .MuiDataGrid-cell:focus {
+  outline: none;
+}
+
+.table-container .MuiDataGrid-root .MuiDataGrid-columnHeaderTitle {
+  font-weight: 700;
+}
+
+/* End Compare table */
