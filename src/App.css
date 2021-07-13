@@ -68,6 +68,10 @@ a {
   color: #42b983;
 }
 
+h1#header-main {
+  font-size: 1.5rem
+}
+
 h1 select {
   font-size: 0.8em;
   border: 1px solid #5e5e5e;
