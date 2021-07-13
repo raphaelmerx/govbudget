@@ -16,8 +16,9 @@ import './GraphDisplay.css'
 function GraphDisplay() {
   const [countryOptions, selectedCountry] = useSelector((state) => [state.country.options, state.country.value])
   const selectedType = useSelector((state) => state.type.value)
-  const selectedCategory = useSelector((state) => state.category.value)
   const countryInfo = getcountryInfo(selectedCountry, countryOptions)
+  let selectedCategory = useSelector((state) => state.category.value)
+  selectedCategory = (selectedCategory === 'Total') ? null : selectedCategory
 
   const valueFormatter = getValueFormatter(selectedType, countryInfo.currency)
 

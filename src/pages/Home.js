@@ -7,7 +7,7 @@ function Home() {
   return (
     <div id="main-container">
       <h1 id="header-main">
-        Visualize public spending for
+        Visualise public spending for
         <CountrySelector />
         represented as
         <TypeSelector />
