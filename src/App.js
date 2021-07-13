@@ -41,6 +41,9 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
+          <Route path="/compare">
+            <Compare />
+          </Route>
           <Route path="/map">
             <Map />
           </Route>

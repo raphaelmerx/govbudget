@@ -13,7 +13,7 @@ const getTableRows = (country1, country2) => {
     'gdp-1': getFormattedGraphData(country1, "percentGDP", null),
     'gdp-2': getFormattedGraphData(country2, "percentGDP", null),
   }
-  const categories = getCategories(country1).children.map(c => c.name)
+  const categories = getCategories(country1)
 
   const tableRows = categories.map(categoryName => {
     const rowData = {
