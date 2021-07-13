@@ -10,6 +10,7 @@ import {
 
 import Home from './pages/Home';
 import Compare from './pages/Compare';
+import Map from './pages/Map';
 import About from './pages/About';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
               <NavLink to="/compare" exact>Compare</NavLink>
             </div>
             <div className="nav-item">
+              <NavLink to="/map" exact>Map</NavLink>
+            </div>
+            <div className="nav-item">
               <NavLink to="/about">About</NavLink>
             </div>
           </nav>
@@ -37,8 +41,8 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/compare">
-            <Compare />
+          <Route path="/map">
+            <Map />
           </Route>
           <Route path="/">
             <Home />

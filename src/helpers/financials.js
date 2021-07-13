@@ -43,6 +43,12 @@ export const getCategorySpendUSD = (country, category) => {
   return categorySpendLocal / exchangerate;
 }
 
+export const getCategorySpendPerCapitaUSD = (country, category) => {
+  const countryInfo = countries.filter(c => c.key === country)[0]
+  const categorySpendUSD = getCategorySpendUSD(country, category)
+  return Math.round(categorySpendUSD * 1000000 / countryInfo.population);
+}
+
 export const getFormattedAmount = (amount, currency) => formatCurrency(currency + ' ', "$0.2s")(amount)
 
 export const getFormattedGraphData = (countryName, type, category) => {

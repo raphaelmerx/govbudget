@@ -11,5 +11,6 @@
   { "symbol": "PLN", "rate": 3.693512 },
   { "symbol": "SEK", "rate": 8.8216 },
   { "symbol": "CHF", "rate": 0.988085 },
-  { "symbol": "£", "rate": 0.74895 }
+  { "symbol": "£", "rate": 0.74895 },
+  { "symbol": "¥", "rate": 109.545 }
 ]
