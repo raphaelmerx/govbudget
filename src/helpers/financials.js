@@ -35,7 +35,7 @@ export const getCategorySpend = (country, category) => {
 }
 
 export const getCategorySpendUSD = (country, category) => {
-  const categorySpendLocal = getCategorySpend(country, category);
+  const categorySpendLocal = category === 'Total' ? getTotalSpend(country) : getCategorySpend(country, category);
   // get currency for country
   const currency = countries.filter(c => c.key === country)[0].currency;
   // get exchange rate with usd
@@ -47,6 +47,12 @@ export const getCategorySpendPerCapitaUSD = (country, category) => {
   const countryInfo = countries.filter(c => c.key === country)[0]
   const categorySpendUSD = getCategorySpendUSD(country, category)
   return Math.round(categorySpendUSD * 1000000 / countryInfo.population);
+}
+
+export const getCategorySpendPercentGDP = (country, category) => {
+  const countryInfo = countries.filter(c => c.key === country)[0]
+  const categorySpendLocal = category === 'Total' ? getTotalSpend(country) : getCategorySpend(country, category);
+  return (categorySpendLocal / countryInfo.GDP) * 100;
 }
 
 export const getFormattedAmount = (amount, currency) => formatCurrency(currency + ' ', "$0.2s")(amount)

@@ -6,7 +6,8 @@ import SidebarItem from './SidebarItem'
 
 const Sidebar = (props) => {
   const [countryOptions, selectedCountry] = useSelector((state) => [state.country.options, state.country.value])
-  const selectedCategory = useSelector((state) => state.category.value)
+  let selectedCategory = useSelector((state) => state.category.value)
+  selectedCategory = (selectedCategory === 'Total') ? null : selectedCategory
   
   const countryInfo = getcountryInfo(selectedCountry, countryOptions)
   const formattedGDP = getFormattedAmount(countryInfo.GDP * 1000000, countryInfo.currency)
