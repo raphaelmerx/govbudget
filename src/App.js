@@ -1,6 +1,6 @@
 import logo from './openbudget-logo.png';
 import './App.css';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,

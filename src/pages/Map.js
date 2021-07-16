@@ -6,8 +6,6 @@ import {
   ComposableMap,
   Geographies,
   Geography,
-  Sphere,
-  Graticule
 } from "react-simple-maps";
 import { scaleLinear } from "d3-scale";
 
@@ -39,7 +37,6 @@ const Map = ({ setTooltipContent }) => {
   const rows = [['Country', 'Public spending / capita (USD)', 'Public spending as % of GDP'], ...getCountryRows(countryOptions, selectedCategory)]
 
   const maxSpend = Math.max(...rows.slice(1, rows.length).map((row) => row[1]))
-
   const colorScale = scaleLinear()
     .domain([0, maxSpend])
     .range(["#ffedea", "#0e8716"]);
