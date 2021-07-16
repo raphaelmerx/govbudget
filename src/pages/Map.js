@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container';
 import {
+  ZoomableGroup,
   ComposableMap,
   Geographies,
   Geography,
@@ -41,7 +42,7 @@ const Map = ({ setTooltipContent }) => {
 
   const colorScale = scaleLinear()
     .domain([0, maxSpend])
-    .range(["#ffedea", "#ff5233"]);
+    .range(["#ffedea", "#0e8716"]);
 
   return (
     <Container id="about-container">
@@ -51,14 +52,13 @@ const Map = ({ setTooltipContent }) => {
       </h1>
       <div>
         <ComposableMap
+          height={400}
           data-tip=""
           projectionConfig={{
             rotate: [-10, 0, 0],
-            scale: 147
           }}
         >
-          <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
-          <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
+          <ZoomableGroup>
           {rows.length > 0 && (
             <Geographies geography={geoUrl}>
               {({ geographies }) =>
@@ -74,19 +74,30 @@ const Map = ({ setTooltipContent }) => {
                         const country = row[0]
                         const amount = row[1].toLocaleString()
                         const gdp = row[2]
-                        const content = `${country} ${selectedCategory}: $${amount} / capita, ${gdp}% of GDP`
+                        const content = `${country}: $${amount} / capita, ${gdp}% of GDP`
 
                         setTooltipContent(content);
                       }}
                       onMouseLeave={() => {
                         setTooltipContent("");
                       }}
+                      style={{
+                        default: {
+                          outline: "none"
+                        },
+                        hover: {
+                          outline: "none"
+                        },
+                        pressed: {
+                          outline: "none"
+                        }
+                      }}
                     />
                   );
                 })
               }
             </Geographies>
-          )}
+          )}</ZoomableGroup>
         </ComposableMap>
       </div>
       <p>
