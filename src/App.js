@@ -1,12 +1,13 @@
 import logo from './openbudget-logo.png';
 import './App.css';
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   NavLink
 } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
 
 import Home from './pages/Home';
 import Compare from './pages/Compare';
@@ -14,8 +15,11 @@ import Map from './pages/Map';
 import About from './pages/About';
 
 function App() {
+  const [tooltipContent, setTooltipContent] = useState("");
+
   return (
     <Router>
+      <ReactTooltip>{tooltipContent}</ReactTooltip>
       <div id="app">
         <div id="logo-container">
           <img id="logo" src={logo} alt="logo"/>
@@ -43,7 +47,7 @@ function App() {
             <Compare />
           </Route>
           <Route path="/map">
-            <Map />
+            <Map setTooltipContent={setTooltipContent}  />
           </Route>
           <Route path="/">
             <Home />

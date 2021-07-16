@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import Container from '@material-ui/core/Container';
 import {
@@ -9,7 +9,6 @@ import {
   Graticule
 } from "react-simple-maps";
 import { scaleLinear } from "d3-scale";
-import ReactTooltip from "react-tooltip";
 
 import { selectOption } from '../reducers/categorySlice'
 import CategorySelector from '../components/CategorySelector';
@@ -18,9 +17,6 @@ import {getCategorySpendPerCapitaUSD, getCategorySpendPercentGDP} from '../helpe
 
 const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-const colorScale = scaleLinear()
-  .domain([0, 20000])
-  .range(["#ffedea", "#ff5233"]);
 
 const getCountryRows = (countries, category) => {
   return countries.map((country) => {
@@ -30,7 +26,7 @@ const getCountryRows = (countries, category) => {
   })
 }
 
-function Map() {
+const Map = ({ setTooltipContent }) => {
   let selectedCategory = useSelector((state) => state.category.value)
   const countryOptions = useSelector((state) => state.country.options)
   const dispatch = useDispatch()
@@ -41,6 +37,12 @@ function Map() {
 
   const rows = [['Country', 'Public spending / capita (USD)', 'Public spending as % of GDP'], ...getCountryRows(countryOptions, selectedCategory)]
 
+  const maxSpend = Math.max(...rows.slice(1, rows.length).map((row) => row[1]))
+
+  const colorScale = scaleLinear()
+    .domain([0, maxSpend])
+    .range(["#ffedea", "#ff5233"]);
+
   return (
     <Container id="about-container">
       <h1 id="header-main">
@@ -49,6 +51,7 @@ function Map() {
       </h1>
       <div>
         <ComposableMap
+          data-tip=""
           projectionConfig={{
             rotate: [-10, 0, 0],
             scale: 147
@@ -60,12 +63,24 @@ function Map() {
             <Geographies geography={geoUrl}>
               {({ geographies }) =>
                 geographies.map((geo) => {
-                  const row = rows.find((r) => r[0] === geo.properties.NAME);
+                  const row = rows.find((r) => geo.properties.NAME.startsWith(r[0]));
                   return (
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
                       fill={row ? colorScale(row[1]) : "#F5F4F6"}
+                      onMouseEnter={() => {
+                        if (!row) return
+                        const country = row[0]
+                        const amount = row[1].toLocaleString()
+                        const gdp = row[2]
+                        const content = `${country} ${selectedCategory}: $${amount} / capita, ${gdp}% of GDP`
+
+                        setTooltipContent(content);
+                      }}
+                      onMouseLeave={() => {
+                        setTooltipContent("");
+                      }}
                     />
                   );
                 })
@@ -83,4 +98,4 @@ function Map() {
   );
 }
 
-export default Map;
+export default memo(Map);
